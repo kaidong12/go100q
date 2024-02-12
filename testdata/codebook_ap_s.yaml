@@ -1,0 +1,315 @@
+"0":
+    name: FILE_OSAL_POSIX
+    trace:
+        - "163": malloc() does not return memory
+        - "165": '%#x = OsGetHeap(%u) | PID: %u'
+        - "167": 'allocated size too big: %zu'
+        - "170": allocated size is 0
+        - "216": 'OsReleaseHeap(%#x)) | PID: %u'
+        - "276": 'OsReallocHeap called for process: %d!'
+        - "299": OsalFopen misusage
+        - "306": OsalFopen [filename:%s] [modes:%s] [stream:%#x]
+        - "324": Retry OsalFopen [filename:%s] [modes:%s] [stream:%#x]
+        - "341": OsalFclose [stream:%#x]
+        - "344": OsalFclose misusage
+        - "359": OsalFread [ptr:%#x] [size:%u] [n:%u] [stream:%#x]
+        - "373": OsalFwrite [ptr:%#x] [size:%u] [n:%u] [s:%#x]
+        - "386": OsalRename [oldpath:%s] [newpath:%s]
+        - "402": OsalFPrintf [stream:%#x]
+        - "419": OsalSnprintf [s:%#x] [maxlen:%u]
+        - "435": OsalFscanf [stream:%#x]
+        - "448": OsalFeof [stream:%#x]
+        - "461": OsalFerror [stream:%#x]
+        - "473": OsalClearerr [stream:%#x]
+        - "486": OsalFflush [stream:%#x]
+        - "502": OsalPrintf
+        - "518": OsalSprintf [s:%#x]
+        - "532": OsalVsnprintf [s:%#x] [maxlen:%u]
+        - "548": OsalFscanf [s:%#x]
+        - "561": OsalFgetc [stream:%#x]
+        - "574": OsalGetchar
+        - "588": OsalFgets [s:%#x] [n:%u] [stream:%#x]
+        - "602": OsalFseek [stream:%#x] [off:%u] [whence:%u]
+        - "615": OsalFtell [stream:%#x]
+        - "629": OsalRemove [filename:%s]
+"1":
+    name: FILE_OSAL_IPC_POSIX
+    trace:
+        - "298": 'OsalIpcSend(%d): (sender=0x%x) (receiver=0x%x) (msgid=0x%x)'
+        - "320": 'OsalIpcReceive(%d): (sender=0x%x) (receiver=0x%x) (msgid=0x%x)'
+        - "388": 'osalCheckSendParam: handle is not a valid pointer'
+        - "392": 'osalCheckSendParam: Invalid handle->socketFd'
+        - "397": 'osalCheckSendParam: pMsg is not a valid pointer'
+        - "402": 'osalCheckSendParam: payloadSize is zero, but message contains payload'
+        - "409": 'osalCheckSendParam: Invalid tIpcId=0x%x'
+        - "461": 'OsMbxPath2Id: Invalid MY_IPC_NAME_BASE'
+        - "470": 'OsMbxPath2Id: MY_IPC_NAME_BASE is not followed by a non zero digit'
+        - "483": 'OsMbxPath2Id: Could not extract id from socket address'
+        - "492": 'OsMbxPath2Id: Invalid socket address'
+        - "540": 'OsalInitIpcHandle: Invalid tIpcId=0x%x'
+        - "549": 'OsalInitIpcHandle: socket() failed: %d %s'
+        - "558": 'OsalInitIpcHandle: (socketFd=%d) (sun_path=%s)'
+        - "568": 'OsalInitIpcHandle: unlink() failed %d %s'
+        - "573": 'OsalInitIpcHandle: unlink successful (sun_path=%s)'
+        - "589": 'OsalInitIpcHandle: bind() failed %d %s'
+        - "599": 'OsalInitIpcHandle: %s - EPOLLWAKEUP is set for mbx 0x%x'
+        - "608": 'OsalInitIpcHandle: setsockopt returned error:%d'
+        - "621": 'OsalInitIpcHandle: epoll_create() failed: %d %s'
+        - "630": 'epollInit: epoll_ctl() failed: %d %s'
+        - "666": 'OsalCloseIpcHandle: handle is not a valid pointer'
+        - "671": 'OsalCloseIpcHandle: (socketFd=%d) (sun_path=%s)'
+        - "676": 'OsalCloseIpcHandle: close() for the socket failed: %d %s'
+        - "683": 'OsalCloseIpcHandle: close() for the epoll failed: %d %s'
+        - "719": 'OsalIpcWaitForMbx: Wait infinite!'
+        - "727": 'OsalIpcWaitForMbx: Invalid tIpcId=0x%x'
+        - "752": 'OsalIpcWaitForMbx: stat(%s) failed: %d %s'
+        - "764": 'OsalIpcWaitForMbx: nanosleep() failed: %d %s'
+        - "771": 'OsalIpcWaitForMbx: timeExpired = %'
+        - "772": 'OsalIpcWaitForMbx: timeout     = %'
+        - "780": 'OsalIpcWaitForMbx (PID: %d; MBX id: 0x%x): %s'
+        - "856": Error starting thread.
+        - "864": Thread detach failed! - Try to terminate it
+        - "869": Thread created successfully.
+        - "894": Trying to send message 0x%x to 0x%x, try %d/%d.
+        - "899": 'Dump Message: oV1: 0x%x, oV2: 0x%x, oV3: 0x%x, size: 0x%x'
+        - "900": Waiting for mailbox 0x%x.
+        - "903": OsLeave occured before waiting for Mailbox. Closing Thread.
+        - "910": OsLeave occured after waiting for Mailbox 0x%x. Closing Thread.
+        - "915": Sending message 0x%x to 0x%x.
+        - "918": Mailbox 0x%x was not there after %d secs, %d nsecs!
+        - "922": Could not send MessageID 0x%x to MailboxID 0x%x!
+        - "925": Maximal number of retries reached.
+        - "932": OsLeave occured after sending the message failed. Closing Thread.
+        - "935": Retry in %d secs, %d nsecs!
+        - "939": MessageID 0x%x sent to MailboxID 0x%x successfully!
+        - "962": 'OsalIpcSend: one or more parameters are not valid'
+        - "972": 'OsalIpcSend: pPayload is not a valid pointer'
+        - "979": 'OsalIpcSend: Message payload exceeds maximum size (bytes=%d)'
+        - "989": 'OsalIpcSend(): sendSize     : %d'
+        - "993": 'OsalIpcSend(OK): (sender=0x%x) (receiver=0x%x) (msgid=0x%x)'
+        - "1029": 'OsalIpcSendInternal: one or more parameters are not valid'
+        - "1041": 'OsalIpcSendInternal(OK): (sender=0x%x) (receiver=0x%x) (msgid=0x%x)'
+        - "1049": 'OsalIpcSendInternal(%d): (sender=0x%x) (receiver=0x%x) (msgid=0x%x)'
+        - "1122": 'OsalIpcReceive: handle is not a valid pointer'
+        - "1128": 'OsalIpcReceive: Invalid handle->socketFd'
+        - "1135": 'OsalIpcReceive: unidentified receiver'
+        - "1142": 'OsalIpcReceive: (receiver=0x%x) pMsg is not a valid pointer'
+        - "1175": 'OsalIpcReceive(): Message received on socket: %d'
+        - "1178": 'OsalIpcReceive: epoll_wait() returned %d failed: %d %s'
+        - "1180": 'OsalIpcReceive: was interrupted!'
+        - "1195": 'OsalIpcReceive(): receiveSize: %d'
+        - "1199": 'OsalIpcReceive(): interrupted recvfrom() (receiver=0x%x) (sender=?) (msgid=?)'
+        - "1209": 'OsalIpcReceive(%d): unidentified sender (receiver=0x%x) (msgid=?)'
+        - "1216": 'OsalIpcReceive(%d): (sender=0x%x) (receiver=0x%x) (msgid=?)'
+        - "1221": 'OsalIpcReceive: receiveSize is too small (sender=0x%x) (receiver=0x%x) (msgid=?)'
+        - "1227": 'OsalIpcReceive(OK): (sender=0x%x) (receiver=0x%x) (msgid=0x%x)'
+        - "1245": 'OsalIpcReceive: (sender=0x%x) (receiver=0x%x) (msgid=0x%x) (payloadSize=%d) payloadSize is not 0!'
+        - "1253": 'OsalIpcReceive: (sender=0x%x) (receiver=0x%x) (msgid=0x%x) payloadSize indicates no payload'
+        - "1258": 'OsalIpcReceive: (sender=0x%x) (receiver=0x%x) (msgid=0x%x) receiveSize does not match message + payloadSize'
+        - "1267": 'OsalIpcReceive: (sender=0x%x) (receiver=0x%x) (msgid=0x%x) Unable to allocate memory'
+        - "1308": O0
+        - "1327": 'osalExtractCredentials: bad cmsg header / message length'
+        - "1332": 'osalExtractCredentials: cmsg_level != SOL_SOCKET'
+        - "1338": 'osalExtractCredentials: cmsg_type != SCM_CREDENTIALS'
+        - "1343": 'osalExtractCredentials: Received credentials pid=%d, uid=%d, gid=%d'
+        - "1365": 'osalCheckSenderCredentials(OK): Its a root process with valid mbx id -> uid mapping'
+        - "1368": 'osalCheckSenderCredentials: Its a root process with NO VALID mbx id(sender=0x%x) -> uid(uid=%d) MAPPING present in validAPMbxUIDMapping[] OR validCPMbxUIDMapping[] !'
+        - "1375": 'osalCheckSenderCredentials(OK): non-root process, mbx id -> uid mapping looks good'
+        - "1382": 'osalCheckSenderCredentials(OK): (senderId=0x%x) -> uid(uid=%d) (receiver=0x%x)'
+        - "1390": 'osalCheckSenderCredentials: UNAUTHORIZED process, mbx id(sender=0x%x) -> uid(uid=%d) mapping FAILED (receiver=0x%x) (msgid=0x%x) )'
+        - "1395": 'osalCheckSenderCredentials: Dump Message: oV1: 0x%x, oV2: 0x%x, oV3: 0x%x, size: 0x%x'
+"2":
+    name: FILE_OSAL_THREADS_POSIX
+    trace:
+        - "207": 'PANIC[ %d ]: %s - %s'
+        - "244": OsThreadModifySignalSet() - no signal mapping found for osal signal %d
+        - "254": 'OsThreadModifySignalSet() - operation cannot be performed. Operation: %d, Signal: %d, Set validity: %d, '
+        - "271": ' OsThreadModifySignalSet() - unexpected operation %d on signal set requested'
+        - "282": 'OsThreadModifySignalSet() - set operation %d failed; return code: %d, errno: %d'
+        - "308": 'OsThreadSetSignalMask() - setting thread signal mask failed with return code: %d '
+        - "374": pThread invalid
+        - "379": pEntry invalid
+        - "384": pThreadName is NULL
+        - "390": 'OsThreadStart() - Thread name is too long or too short. Max: %d character. %s'
+        - "391": thread creation failed
+        - "396": thread attr init failed
+        - "403": 'OsThreadStart() - pthread_attr_setstacksize() failed status: %d'
+        - "407": OsThreadStart() - %d
+        - "408": thread creation failed
+        - "417": 'OsThreadStart() - pthread_setname_np() failed status: %d, %s'
+        - "436": 'OsThreadDetach() - pthread_detach() failed status: %d'
+        - "465": pthread_join() failed - %d
+        - "466": joining the thread failed
+        - "496": pthread_kill() failed - %d
+        - "497": sending SIGINT to the thread failed
+        - "535": syscall( __NR_gettid ) failed errno- %d
+        - "589": OsMutexInit - %p
+        - "592": pMutex invalid
+        - "597": mutex attr init failed
+        - "602": setting mutex type failed
+        - "607": setting mutex shared failed
+        - "612": setting mutex robust failed
+        - "616": mutex init failed
+        - "681": OsMutexDestroy - %p
+        - "686": pMutex invalid
+        - "692": OsMutexDestroy( %p ) - %d
+        - "693": mutex destruction failed
+        - "729": 'pthread_mutex_consistent() failed: %d. No recovery possible!'
+        - "734": 'Mutex lock error: %d not handled. No recovery possible!'
+        - "751": pMutex invalid
+        - "757": OsMutexLock( %p ) - %d
+        - "758": mutex locking failed
+        - "785": pMutex invalid
+        - "791": OsMutexUnlock( %p ) - %d
+        - "792": mutex unlocking failed
+        - "818": condvar invalid
+        - "822": condvar attribute init failed
+        - "827": setting clock type failed
+        - "831": condvar init failed
+        - "853": condvar invalid
+        - "859": condvar destroy failed
+        - "879": condvar invalid
+        - "885": condvar signal failed
+        - "905": condvar invalid
+        - "909": mutex invalid
+        - "915": condvar wait failed
+        - "935": condvar invalid
+        - "939": mutex invalid
+        - "943": time invalid
+        - "962": timedwait failed
+        - "989": '%*s %u'
+        - "1019": r
+        - "1021": 'osGetProcessStatusInfo() - OsalFopen(/proc/self/status) failed; Errno: %d'
+        - "1049": OsTraceProcessStatus() - osGetProcessStatusInfo() failed with status %d
+        - "1051": 'OsalProcessStatusInformation: (PID=%d): VmPeak = %u kB, VmRSS = %u kB, VmSize = %u kB, VmData = %u kB, VmStk = %u kB, Threads = %u'
+        - "1064": 'OsPulseInit: pPulse invalid'
+        - "1071": 'OsPulseInit: epoll_create() failed errno %d'
+        - "1083": 'OsPulseInit: failed to create message pipe  errno %d'
+        - "1101": 'OsPulseInit: Failed to add file descriptor to epoll'
+        - "1125": 'OsPulseDestroy: pPulse NULL'
+        - "1132": 'OsPulseDestroy: close( msgPipe[0] ) failed'
+        - "1137": 'OsPulseDestroy: close( msgPipe[1] ) failed'
+        - "1142": 'OsPulseDestroy: close( epollFd ) failed'
+        - "1164": 'OsPulseSignal: pPulse invalid'
+        - "1170": 'OsPulseSignal: Fd(s) invalid'
+        - "1190": 'OsPulseSignal: write() failed %d'
+        - "1193": 'OsPulseSignal: write() failed number of written Bytes %d less than expected!'
+        - "1219": 'OsPulseTimedWait: pPulse invalid'
+        - "1225": 'OsPulseTimedWait: Fd(s) invalid'
+        - "1238": 'OsPulseTimedWait: epoll_wait() failed errno %d'
+        - "1246": 'OsPulseTimedWait: epoll_wait() timeout'
+        - "1252": 'OsPulseTimedWait: epollwait() unexpected number of fd(s) %d'
+        - "1260": 'OsPulseTimedWait: epoll_wait() received error event(s) 0x08%x'
+        - "1263": 'OsPulseTimedWait: epoll_wait() event EPOLLIN received!'
+        - "1273": 'OsPulseTimedWait: read() failed errno %d'
+        - "1280": 'OsPulseTimedWait: read() failed number of readBytes Bytes %d less than expected!'
+        - "1311": close() failed errno %d
+"3":
+    name: FILE_OSAL_TIME_POSIX
+    trace:
+        - "190": 'PANIC[ %d ]: %s - %s'
+        - "196": 'PANIC[ %d ]: %s - %s, Errno: %d - %s'
+        - "224": timerfd_settime() failed
+        - "235": fcntl(F_GETFD) failed
+        - "242": fcntl(F_SETFD) failed
+        - "256": timerfd_create() failed
+        - "259": timerfd_create(%d - %d - %d)
+        - "275": eventfd() failed
+        - "278": eventfd(%d - %d - %d)
+        - "291": close(tfd) failed
+        - "294": close(efd) failed
+        - "297": close(epfd) failed
+        - "311": read(timerfd) failed
+        - "329": write(eventfd) failed
+        - "332": osTimerWriteEventFd(%d - %d - %d - %d)
+        - "348": epoll_create() failed
+        - "360": epoll_ctl(ADD) failed
+        - "372": epoll_ctl(ADD) failed
+        - "391": epoll_ctl(DEL, tfd) failed
+        - "397": epoll_ctl(DEL, efd) failed
+        - "438": epoll_wait() failed
+        - "445": EPOLLWAKEUP received
+        - "454": eventfd received - thread termination! %d - %d
+        - "501": mbx handle invalid
+        - "505": socket invalid
+        - "509": mbxId invalid
+        - "513": mbxId invalid
+        - "518": payload config is wrong
+        - "552": Timer message could not be sent
+        - "584": 'osTimerThread(%d - %d): Started'
+        - "593": osTimerThread(%d - %d) - osTimerWait() returns OS_OK/CONTINUE
+        - "596": osTimerThread(%d - %d) - osTimerWait() returns OS_TERMINATE
+        - "599": osTimerThread(%d - %d) - osTimerWait() returns OS_TIMEOUT
+        - "608": osTimerThread(%d - %d) - osTimerWait() returns OS_FAIL
+        - "616": osTimerThread(%d - %d) - callback will be called
+        - "618": osTimerThread(%d - %d) - callback is called
+        - "627": 'osTimerThread(%d - %d): Done'
+        - "745": clock_gettime() failed
+        - "746": getting time failed
+        - "766": clock_gettime() failed
+        - "767": getting time failed
+        - "787": clock_gettime() failed
+        - "805": clock_gettime() failed
+        - "821": clock_gettime() failed
+        - "840": NULL == pTimeToGet
+        - "848": clock_gettime() failed
+        - "856": clock_gettime returned negative time
+        - "877": NULL == pTimeToSet
+        - "885": time overflow
+        - "899": clock_settime() failed
+        - "1042": NULL == pBrknDwnTm
+        - "1075": mktime() failed
+        - "1080": Conversion failed
+        - "1101": NULL == pToString
+        - "1126": 'OsalTime_ISO8601: Incoming pString is Null or Incoming stringSize is less than ISO8601 time format'
+        - "1133": 'OsalTime_ISO8601: Failed to provide correct timestamp '
+        - "1139": 'OsalTime_ISO8601: Incoming pTime.nsecs >= NANOSECS_PER_SEC'
+        - "1147": .%03uZ
+        - "1150": 'OsalTime_ISO8601: Incorrect time string received'
+        - "1172": out of memory
+        - "1178": pTimer invalid
+        - "1241": 'OsTimerWakeUpCreate(%d): %d'
+        - "1317": 'OsTimerDestroy(%d): %d'
+        - "1368": 'OsTimerStart(%d): %d - %u s, %u ms'
+        - "1374": timer invalid
+        - "1391": callback invalid
+        - "1396": repeating timer with duration 0
+        - "1431": '%s'
+        - "1449": No timer file descriptor
+        - "1474": 'OsTimerStart(%d): %d - %u s, %u ms'
+        - "1562": 'OsTimerStop(%d): %d'
+        - "1578": timerfd is zero
+        - "1621": 'OsUpdateModificationTime: file path and name is NULL'
+        - "1623": 'OsUpdateModificationTime: utime() failed'
+        - "1655": Open PTP clock failed
+        - "1659": OsOpenPtpClock - Pointer to clock Id is NULL
+        - "1685": Close PTP clock failed
+        - "1688": OsClosePtpClock - Invalid Clock Id
+        - "1715": clock_gettime() failed
+"4":
+    name: FILE_OSAL_RINGBUFFER
+    trace:
+        - "103": 'osalRbCheckRingbuffer: ringbuffer is not a valid pointer'
+        - "113": 'osalRbCheckRingbuffer: ringbuffer-control-structure implausible (size bytes=%u) (write bytes=%u) (read bytes=%u)'
+        - "120": 'osalRbCheckRingbuffer: Magic number not valid'
+        - "136": 'OsalRbCalcBufSize: requestSize (bytes=%u) needs to be at least %u Byte'
+        - "141": OsalRbCalcBufSize:The calculated size would exceed 32bit
+        - "160": 'OsalRbInit: ringbuffer is not a valid pointer'
+        - "167": 'OsalRbInit: ringbuffer size is too small'
+        - "180": 'Init ringbuffer: address=%p size=%u bytes'
+        - "194": 'OsalRbGetFreeSize: Error in ringbuffer check'
+        - "218": 'OsalRbGetConsumedSize: Error in ringbuffer check'
+        - "240": 'OsalRbWrite: Error in ringbuffer check'
+        - "247": 'OsalWriteRb: src is not a valid pointer'
+        - "256": 'OsalWriteRb: free ringbuffer size (bytes=%u) is less than the write size (bytes=%u)'
+        - "300": 'OsalRbRead: Error in ringbuffer check'
+        - "307": 'OsalRbRead: dest is not a valid pointer'
+        - "316": 'OsalRbRead: consumed ringbuffer size (bytes=%u) is less then the read size (bytes=%u)'
+"5":
+    name: FILE_TRACE
+    trace:
+        - "461": a
+        - "504": '%s'
+        - "509": '%c'
+        - "513": ' '
+        - "522": \n

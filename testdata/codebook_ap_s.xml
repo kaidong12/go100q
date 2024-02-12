@@ -1,0 +1,347 @@
+<codebook>
+<info>
+    <cid>256</cid>
+    <arch>armv7a</arch>
+</info>
+<content>
+    <module>   <tag>FILE_OSAL_POSIX</tag> <id>0</id>    </module>
+    <module>   <tag>FILE_OSAL_IPC_POSIX</tag> <id>1</id>    </module>
+    <module>   <tag>FILE_OSAL_THREADS_POSIX</tag> <id>2</id>    </module>
+    <module>   <tag>FILE_OSAL_TIME_POSIX</tag> <id>3</id>    </module>
+    <module>   <tag>FILE_OSAL_RINGBUFFER</tag> <id>4</id>    </module>
+    <module>   <tag>FILE_TRACE</tag> <id>5</id>    </module>
+</content>
+<single_module_description>
+<module_identification>
+    <module_name>FILE_OSAL_POSIX</module_name>
+    <module_path>/workarea/yocto_9x40cat6_ocu4_rc2_5_4/build_bin/tmp/work/armv7a-neon-poky-linux-gnueabi/vwi-o4xmebsop2cgbvxxrel/1.0-r0/vwi-o4xmebsop2cgbvxxrel-1.0/ap/common/osal/out/armv7a/../../src/osal_posix.c</module_path>
+</module_identification>
+   <trace> <line>  163</line> <str>malloc() does not return memory</str></trace> 
+   <trace> <line>  165</line> <str>%#x = OsGetHeap(%u) | PID: %u</str></trace> 
+   <trace> <line>  167</line> <str>allocated size too big: %zu</str></trace> 
+   <trace> <line>  170</line> <str>allocated size is 0</str></trace> 
+   <trace> <line>  216</line> <str>OsReleaseHeap(%#x)) | PID: %u</str></trace> 
+   <trace> <line>  276</line> <str>OsReallocHeap called for process: %d!</str></trace> 
+   <trace> <line>  299</line> <str>OsalFopen misusage</str></trace> 
+   <trace> <line>  306</line> <str>OsalFopen [filename:%s] [modes:%s] [stream:%#x]</str></trace> 
+   <trace> <line>  324</line> <str>Retry OsalFopen [filename:%s] [modes:%s] [stream:%#x]</str></trace> 
+   <trace> <line>  341</line> <str>OsalFclose [stream:%#x]</str></trace> 
+   <trace> <line>  344</line> <str>OsalFclose misusage</str></trace> 
+   <trace> <line>  359</line> <str>OsalFread [ptr:%#x] [size:%u] [n:%u] [stream:%#x]</str></trace> 
+   <trace> <line>  373</line> <str>OsalFwrite [ptr:%#x] [size:%u] [n:%u] [s:%#x]</str></trace> 
+   <trace> <line>  386</line> <str>OsalRename [oldpath:%s] [newpath:%s]</str></trace> 
+   <trace> <line>  402</line> <str>OsalFPrintf [stream:%#x]</str></trace> 
+   <trace> <line>  419</line> <str>OsalSnprintf [s:%#x] [maxlen:%u]</str></trace> 
+   <trace> <line>  435</line> <str>OsalFscanf [stream:%#x]</str></trace> 
+   <trace> <line>  448</line> <str>OsalFeof [stream:%#x]</str></trace> 
+   <trace> <line>  461</line> <str>OsalFerror [stream:%#x]</str></trace> 
+   <trace> <line>  473</line> <str>OsalClearerr [stream:%#x]</str></trace> 
+   <trace> <line>  486</line> <str>OsalFflush [stream:%#x]</str></trace> 
+   <trace> <line>  502</line> <str>OsalPrintf</str></trace> 
+   <trace> <line>  518</line> <str>OsalSprintf [s:%#x]</str></trace> 
+   <trace> <line>  532</line> <str>OsalVsnprintf [s:%#x] [maxlen:%u]</str></trace> 
+   <trace> <line>  548</line> <str>OsalFscanf [s:%#x]</str></trace> 
+   <trace> <line>  561</line> <str>OsalFgetc [stream:%#x]</str></trace> 
+   <trace> <line>  574</line> <str>OsalGetchar</str></trace> 
+   <trace> <line>  588</line> <str>OsalFgets [s:%#x] [n:%u] [stream:%#x]</str></trace> 
+   <trace> <line>  602</line> <str>OsalFseek [stream:%#x] [off:%u] [whence:%u]</str></trace> 
+   <trace> <line>  615</line> <str>OsalFtell [stream:%#x]</str></trace> 
+   <trace> <line>  629</line> <str>OsalRemove [filename:%s]</str></trace> 
+</single_module_description>
+<single_module_description>
+<module_identification>
+    <module_name>FILE_OSAL_IPC_POSIX</module_name>
+    <module_path>/workarea/yocto_9x40cat6_ocu4_rc2_5_4/build_bin/tmp/work/armv7a-neon-poky-linux-gnueabi/vwi-o4xmebsop2cgbvxxrel/1.0-r0/vwi-o4xmebsop2cgbvxxrel-1.0/ap/common/osal/out/armv7a/../../src/osal_ipc_posix.c</module_path>
+</module_identification>
+   <trace> <line>  298</line> <str>OsalIpcSend(%d): (sender=0x%x) (receiver=0x%x) (msgid=0x%x)</str></trace> 
+   <trace> <line>  320</line> <str>OsalIpcReceive(%d): (sender=0x%x) (receiver=0x%x) (msgid=0x%x)</str></trace> 
+   <trace> <line>  388</line> <str>osalCheckSendParam: handle is not a valid pointer</str></trace> 
+   <trace> <line>  392</line> <str>osalCheckSendParam: Invalid handle-&gt;socketFd</str></trace> 
+   <trace> <line>  397</line> <str>osalCheckSendParam: pMsg is not a valid pointer</str></trace> 
+   <trace> <line>  402</line> <str>osalCheckSendParam: payloadSize is zero, but message contains payload</str></trace> 
+   <trace> <line>  409</line> <str>osalCheckSendParam: Invalid tIpcId=0x%x</str></trace> 
+   <trace> <line>  461</line> <str>OsMbxPath2Id: Invalid MY_IPC_NAME_BASE</str></trace> 
+   <trace> <line>  470</line> <str>OsMbxPath2Id: MY_IPC_NAME_BASE is not followed by a non zero digit</str></trace> 
+   <trace> <line>  483</line> <str>OsMbxPath2Id: Could not extract id from socket address</str></trace> 
+   <trace> <line>  492</line> <str>OsMbxPath2Id: Invalid socket address</str></trace> 
+   <trace> <line>  540</line> <str>OsalInitIpcHandle: Invalid tIpcId=0x%x</str></trace> 
+   <trace> <line>  549</line> <str>OsalInitIpcHandle: socket() failed: %d %s</str></trace> 
+   <trace> <line>  558</line> <str>OsalInitIpcHandle: (socketFd=%d) (sun_path=%s)</str></trace> 
+   <trace> <line>  568</line> <str>OsalInitIpcHandle: unlink() failed %d %s</str></trace> 
+   <trace> <line>  573</line> <str>OsalInitIpcHandle: unlink successful (sun_path=%s)</str></trace> 
+   <trace> <line>  589</line> <str>OsalInitIpcHandle: bind() failed %d %s</str></trace> 
+   <trace> <line>  599</line> <str>OsalInitIpcHandle: %s - EPOLLWAKEUP is set for mbx 0x%x</str></trace> 
+   <trace> <line>  608</line> <str>OsalInitIpcHandle: setsockopt returned error:%d</str></trace> 
+   <trace> <line>  621</line> <str>OsalInitIpcHandle: epoll_create() failed: %d %s</str></trace> 
+   <trace> <line>  630</line> <str>epollInit: epoll_ctl() failed: %d %s</str></trace> 
+   <trace> <line>  666</line> <str>OsalCloseIpcHandle: handle is not a valid pointer</str></trace> 
+   <trace> <line>  671</line> <str>OsalCloseIpcHandle: (socketFd=%d) (sun_path=%s)</str></trace> 
+   <trace> <line>  676</line> <str>OsalCloseIpcHandle: close() for the socket failed: %d %s</str></trace> 
+   <trace> <line>  683</line> <str>OsalCloseIpcHandle: close() for the epoll failed: %d %s</str></trace> 
+   <trace> <line>  719</line> <str>OsalIpcWaitForMbx: Wait infinite!</str></trace> 
+   <trace> <line>  727</line> <str>OsalIpcWaitForMbx: Invalid tIpcId=0x%x</str></trace> 
+   <trace> <line>  752</line> <str>OsalIpcWaitForMbx: stat(%s) failed: %d %s</str></trace> 
+   <trace> <line>  764</line> <str>OsalIpcWaitForMbx: nanosleep() failed: %d %s</str></trace> 
+   <trace> <line>  771</line> <str>OsalIpcWaitForMbx: timeExpired = %</str></trace> 
+   <trace> <line>  772</line> <str>OsalIpcWaitForMbx: timeout     = %</str></trace> 
+   <trace> <line>  780</line> <str>OsalIpcWaitForMbx (PID: %d; MBX id: 0x%x): %s</str></trace> 
+   <trace> <line>  856</line> <str>Error starting thread.</str></trace> 
+   <trace> <line>  864</line> <str>Thread detach failed! - Try to terminate it</str></trace> 
+   <trace> <line>  869</line> <str>Thread created successfully.</str></trace> 
+   <trace> <line>  894</line> <str>Trying to send message 0x%x to 0x%x, try %d/%d.</str></trace> 
+   <trace> <line>  899</line> <str>Dump Message: oV1: 0x%x, oV2: 0x%x, oV3: 0x%x, size: 0x%x</str></trace> 
+   <trace> <line>  900</line> <str>Waiting for mailbox 0x%x.</str></trace> 
+   <trace> <line>  903</line> <str>OsLeave occured before waiting for Mailbox. Closing Thread.</str></trace> 
+   <trace> <line>  910</line> <str>OsLeave occured after waiting for Mailbox 0x%x. Closing Thread.</str></trace> 
+   <trace> <line>  915</line> <str>Sending message 0x%x to 0x%x.</str></trace> 
+   <trace> <line>  918</line> <str>Mailbox 0x%x was not there after %d secs, %d nsecs!</str></trace> 
+   <trace> <line>  922</line> <str>Could not send MessageID 0x%x to MailboxID 0x%x!</str></trace> 
+   <trace> <line>  925</line> <str>Maximal number of retries reached.</str></trace> 
+   <trace> <line>  932</line> <str>OsLeave occured after sending the message failed. Closing Thread.</str></trace> 
+   <trace> <line>  935</line> <str>Retry in %d secs, %d nsecs!</str></trace> 
+   <trace> <line>  939</line> <str>MessageID 0x%x sent to MailboxID 0x%x successfully!</str></trace> 
+   <trace> <line>  962</line> <str>OsalIpcSend: one or more parameters are not valid</str></trace> 
+   <trace> <line>  972</line> <str>OsalIpcSend: pPayload is not a valid pointer</str></trace> 
+   <trace> <line>  979</line> <str>OsalIpcSend: Message payload exceeds maximum size (bytes=%d)</str></trace> 
+   <trace> <line>  989</line> <str>OsalIpcSend(): sendSize     : %d</str></trace> 
+   <trace> <line>  993</line> <str>OsalIpcSend(OK): (sender=0x%x) (receiver=0x%x) (msgid=0x%x)</str></trace> 
+   <trace> <line> 1029</line> <str>OsalIpcSendInternal: one or more parameters are not valid</str></trace> 
+   <trace> <line> 1041</line> <str>OsalIpcSendInternal(OK): (sender=0x%x) (receiver=0x%x) (msgid=0x%x)</str></trace> 
+   <trace> <line> 1049</line> <str>OsalIpcSendInternal(%d): (sender=0x%x) (receiver=0x%x) (msgid=0x%x)</str></trace> 
+   <trace> <line> 1122</line> <str>OsalIpcReceive: handle is not a valid pointer</str></trace> 
+   <trace> <line> 1128</line> <str>OsalIpcReceive: Invalid handle-&gt;socketFd</str></trace> 
+   <trace> <line> 1135</line> <str>OsalIpcReceive: unidentified receiver</str></trace> 
+   <trace> <line> 1142</line> <str>OsalIpcReceive: (receiver=0x%x) pMsg is not a valid pointer</str></trace> 
+   <trace> <line> 1175</line> <str>OsalIpcReceive(): Message received on socket: %d</str></trace> 
+   <trace> <line> 1178</line> <str>OsalIpcReceive: epoll_wait() returned %d failed: %d %s</str></trace> 
+   <trace> <line> 1180</line> <str>OsalIpcReceive: was interrupted!</str></trace> 
+   <trace> <line> 1195</line> <str>OsalIpcReceive(): receiveSize: %d</str></trace> 
+   <trace> <line> 1199</line> <str>OsalIpcReceive(): interrupted recvfrom() (receiver=0x%x) (sender=?) (msgid=?)</str></trace> 
+   <trace> <line> 1209</line> <str>OsalIpcReceive(%d): unidentified sender (receiver=0x%x) (msgid=?)</str></trace> 
+   <trace> <line> 1216</line> <str>OsalIpcReceive(%d): (sender=0x%x) (receiver=0x%x) (msgid=?)</str></trace> 
+   <trace> <line> 1221</line> <str>OsalIpcReceive: receiveSize is too small (sender=0x%x) (receiver=0x%x) (msgid=?)</str></trace> 
+   <trace> <line> 1227</line> <str>OsalIpcReceive(OK): (sender=0x%x) (receiver=0x%x) (msgid=0x%x)</str></trace> 
+   <trace> <line> 1245</line> <str>OsalIpcReceive: (sender=0x%x) (receiver=0x%x) (msgid=0x%x) (payloadSize=%d) payloadSize is not 0!</str></trace> 
+   <trace> <line> 1253</line> <str>OsalIpcReceive: (sender=0x%x) (receiver=0x%x) (msgid=0x%x) payloadSize indicates no payload</str></trace> 
+   <trace> <line> 1258</line> <str>OsalIpcReceive: (sender=0x%x) (receiver=0x%x) (msgid=0x%x) receiveSize does not match message + payloadSize</str></trace> 
+   <trace> <line> 1267</line> <str>OsalIpcReceive: (sender=0x%x) (receiver=0x%x) (msgid=0x%x) Unable to allocate memory</str></trace> 
+   <trace> <line> 1308</line> <str>O0</str></trace> 
+   <trace> <line> 1327</line> <str>osalExtractCredentials: bad cmsg header / message length</str></trace> 
+   <trace> <line> 1332</line> <str>osalExtractCredentials: cmsg_level != SOL_SOCKET</str></trace> 
+   <trace> <line> 1338</line> <str>osalExtractCredentials: cmsg_type != SCM_CREDENTIALS</str></trace> 
+   <trace> <line> 1343</line> <str>osalExtractCredentials: Received credentials pid=%d, uid=%d, gid=%d</str></trace> 
+   <trace> <line> 1365</line> <str>osalCheckSenderCredentials(OK): Its a root process with valid mbx id -&gt; uid mapping</str></trace> 
+   <trace> <line> 1368</line> <str>osalCheckSenderCredentials: Its a root process with NO VALID mbx id(sender=0x%x) -&gt; uid(uid=%d) MAPPING present in validAPMbxUIDMapping[] OR validCPMbxUIDMapping[] !</str></trace> 
+   <trace> <line> 1375</line> <str>osalCheckSenderCredentials(OK): non-root process, mbx id -&gt; uid mapping looks good</str></trace> 
+   <trace> <line> 1382</line> <str>osalCheckSenderCredentials(OK): (senderId=0x%x) -&gt; uid(uid=%d) (receiver=0x%x)</str></trace> 
+   <trace> <line> 1390</line> <str>osalCheckSenderCredentials: UNAUTHORIZED process, mbx id(sender=0x%x) -&gt; uid(uid=%d) mapping FAILED (receiver=0x%x) (msgid=0x%x) )</str></trace> 
+   <trace> <line> 1395</line> <str>osalCheckSenderCredentials: Dump Message: oV1: 0x%x, oV2: 0x%x, oV3: 0x%x, size: 0x%x</str></trace> 
+</single_module_description>
+<single_module_description>
+<module_identification>
+    <module_name>FILE_OSAL_THREADS_POSIX</module_name>
+    <module_path>/workarea/yocto_9x40cat6_ocu4_rc2_5_4/build_bin/tmp/work/armv7a-neon-poky-linux-gnueabi/vwi-o4xmebsop2cgbvxxrel/1.0-r0/vwi-o4xmebsop2cgbvxxrel-1.0/ap/common/osal/out/armv7a/../../src/osal_threads_posix.c</module_path>
+</module_identification>
+   <trace> <line>  207</line> <str>PANIC[ %d ]: %s - %s</str></trace> 
+   <trace> <line>  244</line> <str>OsThreadModifySignalSet() - no signal mapping found for osal signal %d</str></trace> 
+   <trace> <line>  254</line> <str>OsThreadModifySignalSet() - operation cannot be performed. Operation: %d, Signal: %d, Set validity: %d, </str></trace> 
+   <trace> <line>  271</line> <str> OsThreadModifySignalSet() - unexpected operation %d on signal set requested</str></trace> 
+   <trace> <line>  282</line> <str>OsThreadModifySignalSet() - set operation %d failed; return code: %d, errno: %d</str></trace> 
+   <trace> <line>  308</line> <str>OsThreadSetSignalMask() - setting thread signal mask failed with return code: %d </str></trace> 
+   <trace> <line>  374</line> <str>pThread invalid</str></trace> 
+   <trace> <line>  379</line> <str>pEntry invalid</str></trace> 
+   <trace> <line>  384</line> <str>pThreadName is NULL</str></trace> 
+   <trace> <line>  390</line> <str>OsThreadStart() - Thread name is too long or too short. Max: %d character. %s</str></trace> 
+   <trace> <line>  391</line> <str>thread creation failed</str></trace> 
+   <trace> <line>  396</line> <str>thread attr init failed</str></trace> 
+   <trace> <line>  403</line> <str>OsThreadStart() - pthread_attr_setstacksize() failed status: %d</str></trace> 
+   <trace> <line>  407</line> <str>OsThreadStart() - %d</str></trace> 
+   <trace> <line>  408</line> <str>thread creation failed</str></trace> 
+   <trace> <line>  417</line> <str>OsThreadStart() - pthread_setname_np() failed status: %d, %s</str></trace> 
+   <trace> <line>  436</line> <str>OsThreadDetach() - pthread_detach() failed status: %d</str></trace> 
+   <trace> <line>  465</line> <str>pthread_join() failed - %d</str></trace> 
+   <trace> <line>  466</line> <str>joining the thread failed</str></trace> 
+   <trace> <line>  496</line> <str>pthread_kill() failed - %d</str></trace> 
+   <trace> <line>  497</line> <str>sending SIGINT to the thread failed</str></trace> 
+   <trace> <line>  535</line> <str>syscall( __NR_gettid ) failed errno- %d</str></trace> 
+   <trace> <line>  589</line> <str>OsMutexInit - %p</str></trace> 
+   <trace> <line>  592</line> <str>pMutex invalid</str></trace> 
+   <trace> <line>  597</line> <str>mutex attr init failed</str></trace> 
+   <trace> <line>  602</line> <str>setting mutex type failed</str></trace> 
+   <trace> <line>  607</line> <str>setting mutex shared failed</str></trace> 
+   <trace> <line>  612</line> <str>setting mutex robust failed</str></trace> 
+   <trace> <line>  616</line> <str>mutex init failed</str></trace> 
+   <trace> <line>  681</line> <str>OsMutexDestroy - %p</str></trace> 
+   <trace> <line>  686</line> <str>pMutex invalid</str></trace> 
+   <trace> <line>  692</line> <str>OsMutexDestroy( %p ) - %d</str></trace> 
+   <trace> <line>  693</line> <str>mutex destruction failed</str></trace> 
+   <trace> <line>  729</line> <str>pthread_mutex_consistent() failed: %d. No recovery possible!</str></trace> 
+   <trace> <line>  734</line> <str>Mutex lock error: %d not handled. No recovery possible!</str></trace> 
+   <trace> <line>  751</line> <str>pMutex invalid</str></trace> 
+   <trace> <line>  757</line> <str>OsMutexLock( %p ) - %d</str></trace> 
+   <trace> <line>  758</line> <str>mutex locking failed</str></trace> 
+   <trace> <line>  785</line> <str>pMutex invalid</str></trace> 
+   <trace> <line>  791</line> <str>OsMutexUnlock( %p ) - %d</str></trace> 
+   <trace> <line>  792</line> <str>mutex unlocking failed</str></trace> 
+   <trace> <line>  818</line> <str>condvar invalid</str></trace> 
+   <trace> <line>  822</line> <str>condvar attribute init failed</str></trace> 
+   <trace> <line>  827</line> <str>setting clock type failed</str></trace> 
+   <trace> <line>  831</line> <str>condvar init failed</str></trace> 
+   <trace> <line>  853</line> <str>condvar invalid</str></trace> 
+   <trace> <line>  859</line> <str>condvar destroy failed</str></trace> 
+   <trace> <line>  879</line> <str>condvar invalid</str></trace> 
+   <trace> <line>  885</line> <str>condvar signal failed</str></trace> 
+   <trace> <line>  905</line> <str>condvar invalid</str></trace> 
+   <trace> <line>  909</line> <str>mutex invalid</str></trace> 
+   <trace> <line>  915</line> <str>condvar wait failed</str></trace> 
+   <trace> <line>  935</line> <str>condvar invalid</str></trace> 
+   <trace> <line>  939</line> <str>mutex invalid</str></trace> 
+   <trace> <line>  943</line> <str>time invalid</str></trace> 
+   <trace> <line>  962</line> <str>timedwait failed</str></trace> 
+   <trace> <line>  989</line> <str>%*s %u</str></trace> 
+   <trace> <line> 1019</line> <str>r</str></trace> 
+   <trace> <line> 1021</line> <str>osGetProcessStatusInfo() - OsalFopen(/proc/self/status) failed; Errno: %d</str></trace> 
+   <trace> <line> 1049</line> <str>OsTraceProcessStatus() - osGetProcessStatusInfo() failed with status %d</str></trace> 
+   <trace> <line> 1051</line> <str>OsalProcessStatusInformation: (PID=%d): VmPeak = %u kB, VmRSS = %u kB, VmSize = %u kB, VmData = %u kB, VmStk = %u kB, Threads = %u</str></trace> 
+   <trace> <line> 1064</line> <str>OsPulseInit: pPulse invalid</str></trace> 
+   <trace> <line> 1071</line> <str>OsPulseInit: epoll_create() failed errno %d</str></trace> 
+   <trace> <line> 1083</line> <str>OsPulseInit: failed to create message pipe  errno %d</str></trace> 
+   <trace> <line> 1101</line> <str>OsPulseInit: Failed to add file descriptor to epoll</str></trace> 
+   <trace> <line> 1125</line> <str>OsPulseDestroy: pPulse NULL</str></trace> 
+   <trace> <line> 1132</line> <str>OsPulseDestroy: close( msgPipe[0] ) failed</str></trace> 
+   <trace> <line> 1137</line> <str>OsPulseDestroy: close( msgPipe[1] ) failed</str></trace> 
+   <trace> <line> 1142</line> <str>OsPulseDestroy: close( epollFd ) failed</str></trace> 
+   <trace> <line> 1164</line> <str>OsPulseSignal: pPulse invalid</str></trace> 
+   <trace> <line> 1170</line> <str>OsPulseSignal: Fd(s) invalid</str></trace> 
+   <trace> <line> 1190</line> <str>OsPulseSignal: write() failed %d</str></trace> 
+   <trace> <line> 1193</line> <str>OsPulseSignal: write() failed number of written Bytes %d less than expected!</str></trace> 
+   <trace> <line> 1219</line> <str>OsPulseTimedWait: pPulse invalid</str></trace> 
+   <trace> <line> 1225</line> <str>OsPulseTimedWait: Fd(s) invalid</str></trace> 
+   <trace> <line> 1238</line> <str>OsPulseTimedWait: epoll_wait() failed errno %d</str></trace> 
+   <trace> <line> 1246</line> <str>OsPulseTimedWait: epoll_wait() timeout</str></trace> 
+   <trace> <line> 1252</line> <str>OsPulseTimedWait: epollwait() unexpected number of fd(s) %d</str></trace> 
+   <trace> <line> 1260</line> <str>OsPulseTimedWait: epoll_wait() received error event(s) 0x08%x</str></trace> 
+   <trace> <line> 1263</line> <str>OsPulseTimedWait: epoll_wait() event EPOLLIN received!</str></trace> 
+   <trace> <line> 1273</line> <str>OsPulseTimedWait: read() failed errno %d</str></trace> 
+   <trace> <line> 1280</line> <str>OsPulseTimedWait: read() failed number of readBytes Bytes %d less than expected!</str></trace> 
+   <trace> <line> 1311</line> <str>close() failed errno %d</str></trace> 
+</single_module_description>
+<single_module_description>
+<module_identification>
+    <module_name>FILE_OSAL_TIME_POSIX</module_name>
+    <module_path>/workarea/yocto_9x40cat6_ocu4_rc2_5_4/build_bin/tmp/work/armv7a-neon-poky-linux-gnueabi/vwi-o4xmebsop2cgbvxxrel/1.0-r0/vwi-o4xmebsop2cgbvxxrel-1.0/ap/common/osal/out/armv7a/../../src/osal_time_posix.c</module_path>
+</module_identification>
+   <trace> <line>  190</line> <str>PANIC[ %d ]: %s - %s</str></trace> 
+   <trace> <line>  196</line> <str>PANIC[ %d ]: %s - %s, Errno: %d - %s</str></trace> 
+   <trace> <line>  224</line> <str>timerfd_settime() failed</str></trace> 
+   <trace> <line>  235</line> <str>fcntl(F_GETFD) failed</str></trace> 
+   <trace> <line>  242</line> <str>fcntl(F_SETFD) failed</str></trace> 
+   <trace> <line>  256</line> <str>timerfd_create() failed</str></trace> 
+   <trace> <line>  259</line> <str>timerfd_create(%d - %d - %d)</str></trace> 
+   <trace> <line>  275</line> <str>eventfd() failed</str></trace> 
+   <trace> <line>  278</line> <str>eventfd(%d - %d - %d)</str></trace> 
+   <trace> <line>  291</line> <str>close(tfd) failed</str></trace> 
+   <trace> <line>  294</line> <str>close(efd) failed</str></trace> 
+   <trace> <line>  297</line> <str>close(epfd) failed</str></trace> 
+   <trace> <line>  311</line> <str>read(timerfd) failed</str></trace> 
+   <trace> <line>  329</line> <str>write(eventfd) failed</str></trace> 
+   <trace> <line>  332</line> <str>osTimerWriteEventFd(%d - %d - %d - %d)</str></trace> 
+   <trace> <line>  348</line> <str>epoll_create() failed</str></trace> 
+   <trace> <line>  360</line> <str>epoll_ctl(ADD) failed</str></trace> 
+   <trace> <line>  372</line> <str>epoll_ctl(ADD) failed</str></trace> 
+   <trace> <line>  391</line> <str>epoll_ctl(DEL, tfd) failed</str></trace> 
+   <trace> <line>  397</line> <str>epoll_ctl(DEL, efd) failed</str></trace> 
+   <trace> <line>  438</line> <str>epoll_wait() failed</str></trace> 
+   <trace> <line>  445</line> <str>EPOLLWAKEUP received</str></trace> 
+   <trace> <line>  454</line> <str>eventfd received - thread termination! %d - %d</str></trace> 
+   <trace> <line>  501</line> <str>mbx handle invalid</str></trace> 
+   <trace> <line>  505</line> <str>socket invalid</str></trace> 
+   <trace> <line>  509</line> <str>mbxId invalid</str></trace> 
+   <trace> <line>  513</line> <str>mbxId invalid</str></trace> 
+   <trace> <line>  518</line> <str>payload config is wrong</str></trace> 
+   <trace> <line>  552</line> <str>Timer message could not be sent</str></trace> 
+   <trace> <line>  584</line> <str>osTimerThread(%d - %d): Started</str></trace> 
+   <trace> <line>  593</line> <str>osTimerThread(%d - %d) - osTimerWait() returns OS_OK/CONTINUE</str></trace> 
+   <trace> <line>  596</line> <str>osTimerThread(%d - %d) - osTimerWait() returns OS_TERMINATE</str></trace> 
+   <trace> <line>  599</line> <str>osTimerThread(%d - %d) - osTimerWait() returns OS_TIMEOUT</str></trace> 
+   <trace> <line>  608</line> <str>osTimerThread(%d - %d) - osTimerWait() returns OS_FAIL</str></trace> 
+   <trace> <line>  616</line> <str>osTimerThread(%d - %d) - callback will be called</str></trace> 
+   <trace> <line>  618</line> <str>osTimerThread(%d - %d) - callback is called</str></trace> 
+   <trace> <line>  627</line> <str>osTimerThread(%d - %d): Done</str></trace> 
+   <trace> <line>  745</line> <str>clock_gettime() failed</str></trace> 
+   <trace> <line>  746</line> <str>getting time failed</str></trace> 
+   <trace> <line>  766</line> <str>clock_gettime() failed</str></trace> 
+   <trace> <line>  767</line> <str>getting time failed</str></trace> 
+   <trace> <line>  787</line> <str>clock_gettime() failed</str></trace> 
+   <trace> <line>  805</line> <str>clock_gettime() failed</str></trace> 
+   <trace> <line>  821</line> <str>clock_gettime() failed</str></trace> 
+   <trace> <line>  840</line> <str>NULL == pTimeToGet</str></trace> 
+   <trace> <line>  848</line> <str>clock_gettime() failed</str></trace> 
+   <trace> <line>  856</line> <str>clock_gettime returned negative time</str></trace> 
+   <trace> <line>  877</line> <str>NULL == pTimeToSet</str></trace> 
+   <trace> <line>  885</line> <str>time overflow</str></trace> 
+   <trace> <line>  899</line> <str>clock_settime() failed</str></trace> 
+   <trace> <line> 1042</line> <str>NULL == pBrknDwnTm</str></trace> 
+   <trace> <line> 1075</line> <str>mktime() failed</str></trace> 
+   <trace> <line> 1080</line> <str>Conversion failed</str></trace> 
+   <trace> <line> 1101</line> <str>NULL == pToString</str></trace> 
+   <trace> <line> 1126</line> <str>OsalTime_ISO8601: Incoming pString is Null or Incoming stringSize is less than ISO8601 time format</str></trace> 
+   <trace> <line> 1133</line> <str>OsalTime_ISO8601: Failed to provide correct timestamp </str></trace> 
+   <trace> <line> 1139</line> <str>OsalTime_ISO8601: Incoming pTime.nsecs &gt;= NANOSECS_PER_SEC</str></trace> 
+   <trace> <line> 1147</line> <str>.%03uZ</str></trace> 
+   <trace> <line> 1150</line> <str>OsalTime_ISO8601: Incorrect time string received</str></trace> 
+   <trace> <line> 1172</line> <str>out of memory</str></trace> 
+   <trace> <line> 1178</line> <str>pTimer invalid</str></trace> 
+   <trace> <line> 1241</line> <str>OsTimerWakeUpCreate(%d): %d</str></trace> 
+   <trace> <line> 1317</line> <str>OsTimerDestroy(%d): %d</str></trace> 
+   <trace> <line> 1368</line> <str>OsTimerStart(%d): %d - %u s, %u ms</str></trace> 
+   <trace> <line> 1374</line> <str>timer invalid</str></trace> 
+   <trace> <line> 1391</line> <str>callback invalid</str></trace> 
+   <trace> <line> 1396</line> <str>repeating timer with duration 0</str></trace> 
+   <trace> <line> 1431</line> <str>%s</str></trace> 
+   <trace> <line> 1449</line> <str>No timer file descriptor</str></trace> 
+   <trace> <line> 1474</line> <str>OsTimerStart(%d): %d - %u s, %u ms</str></trace> 
+   <trace> <line> 1562</line> <str>OsTimerStop(%d): %d</str></trace> 
+   <trace> <line> 1578</line> <str>timerfd is zero</str></trace> 
+   <trace> <line> 1621</line> <str>OsUpdateModificationTime: file path and name is NULL</str></trace> 
+   <trace> <line> 1623</line> <str>OsUpdateModificationTime: utime() failed</str></trace> 
+   <trace> <line> 1655</line> <str>Open PTP clock failed</str></trace> 
+   <trace> <line> 1659</line> <str>OsOpenPtpClock - Pointer to clock Id is NULL</str></trace> 
+   <trace> <line> 1685</line> <str>Close PTP clock failed</str></trace> 
+   <trace> <line> 1688</line> <str>OsClosePtpClock - Invalid Clock Id</str></trace> 
+   <trace> <line> 1715</line> <str>clock_gettime() failed</str></trace> 
+</single_module_description>
+<single_module_description>
+<module_identification>
+    <module_name>FILE_OSAL_RINGBUFFER</module_name>
+    <module_path>/workarea/yocto_9x40cat6_ocu4_rc2_5_4/build_bin/tmp/work/armv7a-neon-poky-linux-gnueabi/vwi-o4xmebsop2cgbvxxrel/1.0-r0/vwi-o4xmebsop2cgbvxxrel-1.0/ap/common/osal/out/armv7a/../../src/osal_ringbuffer.c</module_path>
+</module_identification>
+   <trace> <line>  103</line> <str>osalRbCheckRingbuffer: ringbuffer is not a valid pointer</str></trace> 
+   <trace> <line>  113</line> <str>osalRbCheckRingbuffer: ringbuffer-control-structure implausible (size bytes=%u) (write bytes=%u) (read bytes=%u)</str></trace> 
+   <trace> <line>  120</line> <str>osalRbCheckRingbuffer: Magic number not valid</str></trace> 
+   <trace> <line>  136</line> <str>OsalRbCalcBufSize: requestSize (bytes=%u) needs to be at least %u Byte</str></trace> 
+   <trace> <line>  141</line> <str>OsalRbCalcBufSize:The calculated size would exceed 32bit</str></trace> 
+   <trace> <line>  160</line> <str>OsalRbInit: ringbuffer is not a valid pointer</str></trace> 
+   <trace> <line>  167</line> <str>OsalRbInit: ringbuffer size is too small</str></trace> 
+   <trace> <line>  180</line> <str>Init ringbuffer: address=%p size=%u bytes</str></trace> 
+   <trace> <line>  194</line> <str>OsalRbGetFreeSize: Error in ringbuffer check</str></trace> 
+   <trace> <line>  218</line> <str>OsalRbGetConsumedSize: Error in ringbuffer check</str></trace> 
+   <trace> <line>  240</line> <str>OsalRbWrite: Error in ringbuffer check</str></trace> 
+   <trace> <line>  247</line> <str>OsalWriteRb: src is not a valid pointer</str></trace> 
+   <trace> <line>  256</line> <str>OsalWriteRb: free ringbuffer size (bytes=%u) is less than the write size (bytes=%u)</str></trace> 
+   <trace> <line>  300</line> <str>OsalRbRead: Error in ringbuffer check</str></trace> 
+   <trace> <line>  307</line> <str>OsalRbRead: dest is not a valid pointer</str></trace> 
+   <trace> <line>  316</line> <str>OsalRbRead: consumed ringbuffer size (bytes=%u) is less then the read size (bytes=%u)</str></trace> 
+</single_module_description>
+<single_module_description>
+<module_identification>
+    <module_name>FILE_TRACE</module_name>
+    <module_path>/workarea/yocto_9x40cat6_ocu4_rc2_5_4/build_bin/tmp/work/armv7a-neon-poky-linux-gnueabi/vwi-o4xmebsop2cgbvxxrel/1.0-r0/vwi-o4xmebsop2cgbvxxrel-1.0/ap/common/osal/out/armv7a/../../src/trace.c</module_path>
+</module_identification>
+   <trace> <line>  461</line> <str>a</str></trace> 
+   <trace> <line>  504</line> <str>%s</str></trace> 
+   <trace> <line>  509</line> <str>%c</str></trace> 
+   <trace> <line>  513</line> <str> </str></trace> 
+   <trace> <line>  522</line> <str>\n</str></trace> 
+</single_module_description>
+</codebook>

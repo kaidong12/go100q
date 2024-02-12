@@ -1,0 +1,210 @@
+Component: CP_CRYPTOCDD
+TraceLevel: Info
+Trace: cryptoCdd_Rng_CB_AuthDCar( %!u(int32=614039848) )
+DateTime: 08:00:00:767
+
+DateTime: 08:00:00:513
+Component: CP_AUTHDCAR
+TraceLevel: Info
+Trace: Received msg from internal client 0x3C428514 (opt1:0x3C428514, opt2:0x3C428514, opt3:0x3C428514)
+
+TraceLevel: Info
+Trace: CryptoCdd_CbcEncrypt( CID:%!u(int32=615415848) )
+DateTime: 08:00:02:216
+Component: CP_CRYPTOCDD
+
+DateTime: 08:00:00:436
+Component: CP_CRYPTOCDD
+TraceLevel: Info
+Trace: cryptoCdd_CbcEnc_CB_AuthDCar( %!u(int32=617906216) )
+
+DateTime: 08:00:01:648
+Component: CP_AUTHDCAR
+TraceLevel: Info
+Trace: Received msg from internal client 0x3C428514 (opt1:0x3C428514, opt2:0x3C428514, opt3:0x3C428514)
+
+DateTime: 08:00:01:564
+Component: CP_CRYPTOCDD
+TraceLevel: Info
+Trace: CryptoCdd_MacGenerate( CID:%!u(int32=606896424) )
+
+DateTime: 08:00:00:262
+Component: CP_SOKCDD
+TraceLevel: Info
+Trace: %!(EXTRA int32=606700312)
+
+DateTime: 08:00:01:768
+Component: CP_SOKCDD
+TraceLevel: Info
+Trace: %!(EXTRA int32=606700312)
+
+Component: CP_SOKCDD
+TraceLevel: Info
+Trace: %!(EXTRA int32=617579288)
+DateTime: 08:00:03:525
+
+Component: CP_SOKCDD
+TraceLevel: Info
+Trace: 
+DateTime: 08:00:03:795
+
+DateTime: 08:00:00:420
+Component: CP_SOKCDD
+TraceLevel: Info
+Trace: 
+
+Component: CP_TIMECAR_FSMSOK
+TraceLevel: Info
+Trace: Reading monotonic clock succeeded
+DateTime: 08:00:02:032
+
+Component: CP_TIMECAR_FSMSOK
+TraceLevel: Info
+Trace: New freshness recieved. Relay freshness: 745538336, TimeMan Mailbox status: 745538336
+DateTime: 08:00:02:634
+
+DateTime: 08:00:02:815
+Component: CP_TIMECAR_FSMSOK
+TraceLevel: Info
+Trace: Request AuthD session to relay freshness to TimeMan
+
+DateTime: 08:00:03:354
+Component: CP_TIMECAR_CORE
+TraceLevel: Info
+Trace: Authd session request succeeded.
+
+Trace: Received msg from internal client 0x3C428514 (opt1:0x3C428514, opt2:0x3C428514, opt3:0x3C428514)
+DateTime: 08:00:02:440
+Component: CP_AUTHDCAR
+TraceLevel: Info
+
+TraceLevel: Warn
+Trace: Session active (sessionId: 0x2D62C115, state:761446677). Opt out
+DateTime: 08:00:01:544
+Component: CP_AUTHDCAR_CLIENTS
+
+DateTime: 08:00:00:889
+Component: CP_AUTHDCAR_CLIENTS
+TraceLevel: Info
+Trace: Queuing request (clientId: 0x2C96C115, sessionId: 0x2C96C115)
+
+DateTime: 08:00:00:061
+Component: CP_DIAGCAR_EVENT
+TraceLevel: Info
+Trace: %!(EXTRA int32=882541066, int32=882541066, int32=882541066)
+
+TraceLevel: Info
+Trace: cryptoCdd_MacGen_CB_AuthDCar( %!u(int32=609386792) )
+DateTime: 08:00:02:344
+Component: CP_CRYPTOCDD
+
+Trace: Received msg from internal client 0x3C428514 (opt1:0x3C428514, opt2:0x3C428514, opt3:0x3C428514)
+DateTime: 08:00:00:077
+Component: CP_AUTHDCAR
+TraceLevel: Info
+
+DateTime: 08:00:01:060
+Component: CP_AUTHDCAR_UTILS
+TraceLevel: Info
+Trace: MsgID: 0x3C3C8115 successfully sent to AP (opt: 0x3C3C8115, 0x3C3C8115, 0x3C3C8115)
+
+DateTime: 08:00:00:486
+Component: CP_AUTHDCAR
+TraceLevel: Info
+Trace: Response 0x2C188814 sent. payloadSize: %!u(int32=739805204)
+
+DateTime: 08:00:01:443
+Component: CP_AUTHDCAR
+TraceLevel: Info
+Trace: feedMsgProcFsm exit DONE (%!u(int32=613582868))
+
+Trace: Terminate session 0x2DEF8314, reason 770671380 
+DateTime: 08:00:02:651
+Component: CP_AUTHDCAR
+TraceLevel: Warn
+
+DateTime: 08:00:00:640
+Component: CP_AUTHDCAR_UTILS
+TraceLevel: Info
+Trace: MsgID: 0x3C3C8115 successfully sent to AP (opt: 0x3C3C8115, 0x3C3C8115, 0x3C3C8115)
+
+Component: CP_AUTHDCAR_CLIENTS
+TraceLevel: Info
+Trace: Queuing request (clientId: 0x2C96C115, sessionId: 0x2C96C115)
+DateTime: 08:00:00:369
+
+Trace: Started new session (sessionId: 0x249CC115)
+DateTime: 08:00:01:644
+Component: CP_AUTHDCAR_CLIENTS
+TraceLevel: Info
+
+Trace: Task Supervision Status: Event 1014743311, HpEvent 1014743311, LowestPrioTask 1014743311, Vkms 1014743311 (Counter)
+DateTime: 08:00:03:576
+Component: CP_POWERCARCDD_SAFETY
+TraceLevel: Info
+
+Trace: Task Supervision Status: Time 1014808847, Com5ms 1014808847, Com10ms 1014808847, DiagTask 1014808847 (Counter)
+DateTime: 08:00:02:399
+Component: CP_POWERCARCDD_SAFETY
+TraceLevel: Info
+
+DateTime: 08:00:03:101
+Component: CP_HEALTHCAR
+TraceLevel: Info
+Trace: HealthCar_onCyclic1sec: Memory Status 1010434305 - Last CP reset reason: %!u(int32=1010434305) - Page Switch Counter: %!u(int32=1010434305) - Current VWIFMode : %!u(int32=1010434305)
+
+DateTime: 08:00:00:288
+Component: CP_HEALTHCAR
+TraceLevel: Info
+Trace: printFeeFlsErrorEvents: 0x2CF70201.2CF70201
+
+Component: CP_AUDIOCAR
+TraceLevel: Info
+Trace: %!(EXTRA int32=610553095)
+DateTime: 08:00:02:320
+
+Trace: %!(EXTRA int32=613565191)
+DateTime: 08:00:02:206
+Component: CP_AUDIOCAR
+TraceLevel: Info
+
+Trace: %!(EXTRA int32=614613767)
+DateTime: 08:00:02:483
+Component: CP_AUDIOCAR
+TraceLevel: Info
+
+DateTime: 08:00:02:058
+Component: CP_FLASHERCAR
+TraceLevel: Info
+Trace: %!(EXTRA int32=616285458)
+
+DateTime: 08:00:02:015
+Component: CP_AUTHDCAR
+TraceLevel: Info
+Trace: Received msg from internal client 0x3C428514 (opt1:0x3C428514, opt2:0x3C428514, opt3:0x3C428514)
+
+DateTime: 08:00:03:029
+Component: CP_IMOAPP
+TraceLevel: Info
+Trace: ImoApp_SetErrors( 2410C519 )
+
+DateTime: 08:00:00:571
+Component: CP_IMODCM
+TraceLevel: Info
+Trace: ImoDcm_ReadDID( 34D1801A %!u(int32=886145050) ): %!u(int32=886145050)
+
+DateTime: 08:00:03:628
+Component: CP_IMOAPP
+TraceLevel: Info
+Trace: ImoApp_DiagResp( 34AEC319 34AEC319 [%!u(int32=883868441)] )
+
+Trace: CP_CODEBOOK_ERROR_58_151>
+DateTime: 08:00:01:769
+Component: MPONENT_ERROR_58
+TraceLevel: Info
+
+DateTime: 08:00:03:959
+Component: CP_POWERCARAPP
+TraceLevel: Info
+Trace: %!(EXTRA int32=604899343)
+

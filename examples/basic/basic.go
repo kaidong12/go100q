@@ -108,19 +108,31 @@ func Map_demo() {
 	siteMap["Wiki"] = "维基百科"
 	siteMap["Facebook"] = "脸书"
 
-	for site := range siteMap {
-		fmt.Println(site, "站点是", siteMap[site])
+	for site, value := range siteMap {
+		fmt.Println("名称是：", site, " 站点是：", value)
 	}
 
 	/*查看元素在集合中是否存在 */
 	name, ok := siteMap["Facebook"] /*如果确定是真实的,则存在,否则不存在 */
 	fmt.Println(ok)
 	fmt.Println(name)
-
 	if ok {
 		fmt.Println("Facebook 的站点是", name)
 	} else {
 		fmt.Println("Facebook 站点不存在")
+	}
+
+	// Delete an item from the map
+	fmt.Println("Delete Baidu from the map")
+	delete(siteMap, "Baidu")
+
+	name1, ok := siteMap["Baidu"] /*如果确定是真实的,则存在,否则不存在 */
+	fmt.Println(ok)
+	fmt.Println(name1)
+	if ok {
+		fmt.Println("Baidu 的站点是", name1)
+	} else {
+		fmt.Println("Baidu 站点不存在")
 	}
 
 }
@@ -167,7 +179,14 @@ func Pointer() {
 
 	a_pointer = &a
 
-	fmt.Printf("a的地址: %x\n", &a)
-	fmt.Printf("a_pointer的值: %x\n", a_pointer)
-	fmt.Printf("a_pointer指向的值: %d\n", *a_pointer)
+	fmt.Printf("a的地址(&a): %x\n", &a)
+	fmt.Printf("a_pointer的值(a_pointer): %x\n", a_pointer)
+	fmt.Printf("a_pointer指向的值(*a_pointer): %d\n", *a_pointer)
+}
+
+func Swap(pa *int, pb *int) {
+	var temp int
+	temp = *pa
+	*pa = *pb
+	*pb = temp
 }

@@ -9,7 +9,7 @@ type Books struct {
 	book_id int
 }
 
-func struct_demo() {
+func Struct_demo() {
 	var Book1 Books /* 声明 Book1 为 Books 类型 */
 	var Book2 Books /* 声明 Book2 为 Books 类型 */
 
@@ -26,20 +26,37 @@ func struct_demo() {
 	Book2.book_id = 6495700
 
 	/* 打印 Book1 信息 */
-	printBook(&Book1)
+	fmt.Printf("Book1 address:\n %p\n", &Book1)
+	printBook1(Book1)
 
 	/* 打印 Book2 信息 */
+	fmt.Printf("Book2 address:\n %p\n", &Book2)
 	printBook(&Book2)
 
 	deferPanic()
 
 }
 
-func printBook(book *Books) {
+func printBook1(book Books) {
+	fmt.Printf("Book address:\n %p\n", &book)
+
 	fmt.Printf("Book title : %s\n", book.title)
 	fmt.Printf("Book author : %s\n", book.author)
 	fmt.Printf("Book subject : %s\n", book.subject)
 	fmt.Printf("Book book_id : %d\n", book.book_id)
+	fmt.Printf("All fields:\n %v\n", book)
+
+}
+
+func printBook(book *Books) {
+	fmt.Printf("Book address:\n %p\n", book)
+
+	fmt.Printf("Book title : %s\n", book.title)
+	fmt.Printf("Book author : %s\n", book.author)
+	fmt.Printf("Book subject : %s\n", book.subject)
+	fmt.Printf("Book book_id : %d\n", book.book_id)
+	fmt.Printf("All fields:\n %v\n", book)
+
 }
 
 func deferPanic() {

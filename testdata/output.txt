@@ -1,4 +1,4 @@
-Component: CP_CRYPTOCDD
+HELLO THIS IS A TEST!!!
 TraceLevel: Info
 Trace: cryptoCdd_Rng_CB_AuthDCar( %!u(int32=614039848) )
 DateTime: 08:00:00:767

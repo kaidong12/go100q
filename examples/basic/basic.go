@@ -3,13 +3,28 @@ package basic
 import (
 	"fmt"
 	"math"
+	"strconv"
+	"strings"
 )
 
 func Variable() {
 	fmt.Printf("Hello, World!\n")
+	var a int
+	a = 100
+	fmt.Println(a)
+
 	b := 111
-	var s string = fmt.Sprintf("%s%d%d", "sss", b, 222)
-	fmt.Printf(s)
+	var s string = fmt.Sprintf("%s -- %d -- %d", "sss", b, 222)
+	fmt.Println(s)
+
+	c := "291100.49 1131998.84"
+	uptime, _ := strconv.Atoi(strings.Split(strings.Split(c, " ")[0], ".")[0])
+	fmt.Println(uptime)
+}
+
+func Bytes_demo() {
+	data := []byte{'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd'}
+	fmt.Println(data)
 }
 
 func Array_demo() {
@@ -72,9 +87,6 @@ func Slice_and_range_demo() {
 
 func Map_demo() {
 
-	// var siteMap map[string]string
-	// siteMap = make(map[string]string)
-
 	ages := map[string]int{
 		"Joe":  30,
 		"Mary": 25,
@@ -87,6 +99,7 @@ func Map_demo() {
 	fmt.Println()
 	fmt.Println(ages)
 	fmt.Println("John's age: ", ages["John"])
+	fmt.Println("Bob's age: ", ages["bob"])
 
 	if age, ok := ages["bob"]; !ok {
 		fmt.Printf("bob is not exist %d\n", age)
@@ -95,11 +108,31 @@ func Map_demo() {
 	age, ok := ages["bob"]
 	fmt.Println(age)
 	if !ok {
-		fmt.Println("bob is not exist")
+		fmt.Println("bob does not exist")
 	}
 
 	fmt.Println()
-	siteMap := make(map[string]string)
+	boolMap := make(map[string]bool)
+	boolMap["t"] = true
+	boolMap["f"] = false
+
+	if !boolMap["f"] {
+		fmt.Println("f exist")
+	}
+
+	if boolMap["t"] {
+		fmt.Println("t exist")
+	}
+
+	if !boolMap["bool"] {
+		fmt.Println("bool does not exist")
+	}
+
+	fmt.Println()
+	//siteMap := make(map[string]string)
+	var siteMap map[string]string
+	// siteMap = make(map[string]string)
+	siteMap = make(map[string]string, 10)
 
 	/* map 插入 key - value 对,各个国家对应的首都 */
 	siteMap["Google"] = "谷歌"
@@ -111,6 +144,11 @@ func Map_demo() {
 	for site, value := range siteMap {
 		fmt.Println("名称是：", site, " 站点是：", value)
 	}
+	fmt.Println("Length of map: ", len(siteMap))
+	capacity := capacityOfMap(siteMap)
+	fmt.Println("Capacity of map: ", capacity)
+
+	fmt.Println(siteMap)
 
 	/*查看元素在集合中是否存在 */
 	name, ok := siteMap["Facebook"] /*如果确定是真实的,则存在,否则不存在 */
@@ -135,6 +173,22 @@ func Map_demo() {
 		fmt.Println("Baidu 站点不存在")
 	}
 
+}
+
+// capacityOfMap returns an estimate of the capacity of the map
+func capacityOfMap(m map[string]string) int {
+	// Get the number of elements in the map
+	numElements := len(m)
+
+	// Estimate the capacity based on the number of elements
+	capacity := numElements + (numElements >> 1)
+
+	// If the capacity is less than 10%, keep the original capacity
+	if capacity < 10 {
+		capacity = 10
+	}
+
+	return capacity
 }
 
 func Recursion_demo() {
@@ -189,4 +243,40 @@ func Swap(pa *int, pb *int) {
 	temp = *pa
 	*pa = *pb
 	*pb = temp
+}
+
+func SlideWindow1() {
+	longString := "this is a long tete test string"
+	subString := "test"
+
+	start, end := 0, 0
+	foundAt := -1
+
+	for end < len(longString) {
+		if longString[end] == subString[0] {
+			match := true
+			for i := 1; i < len(subString); i++ {
+				if longString[end+i] != subString[i] {
+					match = false
+					break
+				}
+			}
+
+			if match {
+				foundAt = start
+			}
+		}
+
+		end++
+		if end-start >= len(subString) {
+			start++
+		}
+	}
+
+	if foundAt != -1 {
+		fmt.Printf("The substring '%s' is found at index %d.\n", subString, foundAt)
+	} else {
+		fmt.Printf("The substring '%s' is not found in the long string.\n", subString)
+	}
+
 }

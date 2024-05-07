@@ -1,17 +1,19 @@
 package main
 
-import "go100q/im_system"
+import "go100q/examples/gin_demo"
 
 func main() {
 
 	//===============================
 	//basic.Variable()
+	//basic.Bytes_demo()
 
 	//basic.Array_demo()
 	//
 	//basic.Slice_and_range_demo()
 
 	//basic.Map_demo()
+	//basic.SlideWindow1()
 
 	//===============================
 	//basic.Pointer()
@@ -58,13 +60,49 @@ func main() {
 	//===============================
 	//basic.GoroutineChannelDemo1()
 	//basic.GoroutineChannelDemo2_no_buffer()
-	//basic.GoroutineChannelDemo3_buffered()
+	//basic.GoroutineChannelDemo3_buffered_int()
+
+	//start := time.Now()
+	//basic.GoroutineChannelDemo3_slide_window1()
+	//basic.GoroutineChannelDemo3_slide_window2()
+	//basic.GoroutineChannelDemo3_slide_window3()
+	//elapsed := time.Since(start)
+
+	//fmt.Printf("GoroutineChannelDemo3_buffered_bytes() took %s\n", elapsed)
+
 	//basic.GoroutineChannelDemo4_close_chan()
 	//basic.GoroutineChannelDemo4_range()
 	//basic.GoroutineChannelDemo5_one_direction()
 	//basic.GoroutineChannelDemo6_select_multiple_channel()
 
-	server := im.NewServer("127.0.0.1", 8888)
-	server.Start()
+	//===============================
+	//===============================
+	//server := im.NewServer("127.0.0.1", 8888)
+	//server.Start()
 
+	//===============================
+	//===============================
+	//===============================
+	//gin_demo.PingPong()
+	//gin_demo.RESTfulDemo()
+	gin_demo.LoadStaticPage()
+
+	//gin_demo.GetParametersInRequests1()
+	//gin_demo.GetParametersInRequests2()
+
+	//gin_demo.GetJsonInRequests()
+	//gin_demo.FormDemo_submit_form_data()
+	//gin_demo.FormDemo_submit_form_to_new_page()
+
+	//gin_demo.Redirect_to_another_page()
+	//gin_demo.Route_group()
+	//gin_demo.Redirect_to_404_page()
+
+	//gin_demo.My_Handler()
+
+	//===============================
+	//===============================
+	//===============================
+	//gorm_demo.Sqlite_demo_1()
+	//gorm_demo.Sqlite_demo_2()
 }

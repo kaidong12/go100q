@@ -28,10 +28,14 @@ func Struct_demo() {
 	/* 打印 Book1 信息 */
 	fmt.Printf("Book1 address:\n %p\n", &Book1)
 	printBook1(Book1)
+	fmt.Printf("Book1 after change:\n %v\n", Book1)
+
+	fmt.Println("===============================")
 
 	/* 打印 Book2 信息 */
 	fmt.Printf("Book2 address:\n %p\n", &Book2)
-	printBook(&Book2)
+	printBook2(&Book2)
+	fmt.Printf("Book2 after change:\n %v\n", Book2)
 
 	deferPanic()
 
@@ -46,9 +50,13 @@ func printBook1(book Books) {
 	fmt.Printf("Book book_id : %d\n", book.book_id)
 	fmt.Printf("All fields:\n %v\n", book)
 
+	book.author = "111111111111111"
+
+	fmt.Printf("Book author in function: %s\n", book.author)
+
 }
 
-func printBook(book *Books) {
+func printBook2(book *Books) {
 	fmt.Printf("Book address:\n %p\n", book)
 
 	fmt.Printf("Book title : %s\n", book.title)
@@ -56,6 +64,10 @@ func printBook(book *Books) {
 	fmt.Printf("Book subject : %s\n", book.subject)
 	fmt.Printf("Book book_id : %d\n", book.book_id)
 	fmt.Printf("All fields:\n %v\n", book)
+
+	book.author = "222222222222222"
+
+	fmt.Printf("Book author in function: %s\n", book.author)
 
 }
 

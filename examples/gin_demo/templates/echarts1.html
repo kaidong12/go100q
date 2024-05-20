@@ -7,8 +7,8 @@
 
 <body style="height: 100%; margin: auto">
   <div id="container" style="height: 100%"></div>
-    <!-- <script src="https://fastly.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script> -->
-    <script src="/w3cs/echarts.min.js"></script>
+  <!-- <script src="https://fastly.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script> -->
+  <script src="/w3cs/echarts.min.js"></script>
   <script type="text/javascript">
     function formatDuring(mss) {
       var days = parseInt(mss / (1000 * 60 * 60 * 24));
@@ -39,7 +39,7 @@
       tooltip: {//提示框
         formatter: function (params) {
           abc = params
-          return params.name + ':<br/>' + (params.value[0] == '1' ? '运行' : (params.value[0] == 0 ? '停机' : params.value[0] == 2 ? '待机' : '故障')) + '时间' + ': ' + params.value[1] + '~' + params.value[2] + '<br/>' + '总时长: ' + formatDuring(Date.parse(params.value[2]) - Date.parse(params.value[1])).slice(2); // (Math.abs(parseInt((new Date(params.value[3]).getTime() - new Date(params.value[2]).getTime()) / (1000 * 60 * 60 * 24))))
+          return params.name + ':<br/>' + (params.value[0] == 1 ? '运行' : (params.value[0] == 0 ? '停机' : params.value[0] == 2 ? '待机' : '故障')) + '时间' + ': ' + params.value[1] + '~' + params.value[2] + '<br/>' + '总时长: ' + formatDuring(Date.parse(params.value[2]) - Date.parse(params.value[1])).slice(2); // (Math.abs(parseInt((new Date(params.value[3]).getTime() - new Date(params.value[2]).getTime()) / (1000 * 60 * 60 * 24))))
         }//数据的值
       },
       legend: {//图例

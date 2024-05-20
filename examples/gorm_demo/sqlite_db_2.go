@@ -9,10 +9,10 @@ import (
 
 type RebootLog struct {
 	gorm.Model
-	Status  uint
-	Version uint16
-	Timeins uint32
-	Flag    uint
+	Status       uint
+	Version      uint16
+	TimeInMillis uint32
+	Flag         uint
 }
 
 func recordLog(db *gorm.DB, log *RebootLog) {
@@ -25,11 +25,11 @@ func recordLog(db *gorm.DB, log *RebootLog) {
 	} else {
 		slog.Info("===================", "Current record is: ", last)
 		if last.Status == log.Status {
-			slog.Info("Update Timeins", "New Timeins: ", log.Timeins)
-			db.Model(&last).Update("Timeins", log.Timeins)
+			slog.Info("Update Timeins", "New Timeins: ", log.TimeInMillis)
+			db.Model(&last).Update("Timeins", log.TimeInMillis)
 		} else {
-			//db.Model(&last).Updates(RebootLog{Timeins: last.Timeins + 60, Flag: 0})
-			db.Model(&last).Updates(map[string]interface{}{"Timeins": last.Timeins + 60, "Flag": 0})
+			//db.Model(&last).Updates(RebootLog{Timeins: last.TimeInMillis + 60000, Flag: 0})
+			db.Model(&last).Updates(map[string]interface{}{"Timeins": last.TimeInMillis + 60000, "Flag": 0})
 
 			slog.Info("Print new record", "New record: ", log)
 			log.Flag = 1
@@ -60,14 +60,14 @@ func Sqlite_demo_2() {
 	//recordLog(db, &RebootLog{Status: 0, Timeins: 10})
 	//time.Sleep(time.Second * 1)
 
-	recordLog(db, &RebootLog{Status: 0, Timeins: 20})
+	recordLog(db, &RebootLog{Status: 0, TimeInMillis: 20000})
 	time.Sleep(time.Second * 1)
-	recordLog(db, &RebootLog{Status: 0, Timeins: 40})
+	recordLog(db, &RebootLog{Status: 0, TimeInMillis: 40000})
 	time.Sleep(time.Second * 1)
 
-	recordLog(db, &RebootLog{Status: 1, Timeins: 0})
+	recordLog(db, &RebootLog{Status: 1, TimeInMillis: 0})
 	time.Sleep(time.Second * 1)
-	recordLog(db, &RebootLog{Status: 1, Timeins: 10})
+	recordLog(db, &RebootLog{Status: 1, TimeInMillis: 10000})
 	time.Sleep(time.Second * 1)
 
 	//// Read
@@ -85,12 +85,24 @@ func Sqlite_demo_2() {
 	end := "2024-05-05 00:00:00"
 	db.Where("created_at > ? AND updated_at < ?", start, end).Find(&logs)
 	slog.Info("打印查询结果", "查询结果", logs)
+	for _, log := range logs {
+		slog.Info("打印查询结果", "创建时间", log.CreatedAt)
+		slog.Info("打印查询结果", "更新时间", log.UpdatedAt)
+		slog.Info("打印查询结果", "创建时间", log.CreatedAt.UnixMilli())
+		slog.Info("打印查询结果", "更新时间", log.UpdatedAt.UnixMilli())
+
+		db.Delete(&log)
+	}
+
+	//db.Select("created_at", "updated_at").Where("created_at > ? AND updated_at < ?", start, end).Find(&logs)
+	//
+	//// Print the selected fields
+	//fmt.Printf("Selected fields: %+v\n", logs)
 
 	//// BETWEEN
 	//db.Where("created_at BETWEEN ? AND ?", lastWeek, today).Find(&users)
 	//// SELECT * FROM users WHERE created_at BETWEEN '2000-01-01 00:00:00' AND '2000-01-08 00:00:00';
 
-	//
 	//// Update - 将 product 的 price 更新为 200
 	//db.Model(&product).Update("Price", 200)
 	//// Update - 更新多个字段

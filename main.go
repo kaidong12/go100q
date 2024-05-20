@@ -1,6 +1,6 @@
 package main
 
-import "go100q/examples/gin_demo"
+import "go100q/examples/gorm_demo"
 
 func main() {
 
@@ -75,6 +75,17 @@ func main() {
 	//basic.GoroutineChannelDemo5_one_direction()
 	//basic.GoroutineChannelDemo6_select_multiple_channel()
 
+	//basic.GoroutineChannelDemo7_WithTimeout_ctx_done()
+	//basic.GoroutineChannelDemo8_WithTimeout_call_cancel()
+
+	//===============================
+	//===============================
+	//basic.Channel_cool_down_demo_1()
+
+	//cooldownService := basic.NewCooldownService(10 * time.Second)
+	//basic.Channel_cool_down_demo_2_stop(cooldownService)
+	//basic.Channel_cool_down_demo_2_start(cooldownService)
+
 	//===============================
 	//===============================
 	//server := im.NewServer("127.0.0.1", 8888)
@@ -85,7 +96,7 @@ func main() {
 	//===============================
 	//gin_demo.PingPong()
 	//gin_demo.RESTfulDemo()
-	gin_demo.LoadStaticPage()
+	//gin_demo.LoadStaticPage()
 
 	//gin_demo.GetParametersInRequests1()
 	//gin_demo.GetParametersInRequests2()
@@ -103,6 +114,7 @@ func main() {
 	//===============================
 	//===============================
 	//===============================
-	//gorm_demo.Sqlite_demo_1()
+	gorm_demo.Sqlite_demo_1()
 	//gorm_demo.Sqlite_demo_2()
+	//gorm_demo.Sqlite_demo_3()
 }

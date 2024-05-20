@@ -2,6 +2,7 @@ package basic
 
 import (
 	"fmt"
+	"time"
 )
 
 func GoroutineChannelDemo4_close_chan() {
@@ -18,10 +19,13 @@ func GoroutineChannelDemo4_close_chan() {
 		close(c)
 	}()
 
+	time.Sleep(1 * time.Second)
+
 	for {
 		//ok为true说明channel没有关闭，为false说明管道已经关闭
 		fmt.Println("===========接收channel->c的数据，并赋值给data")
 		if data, ok := <-c; ok {
+			time.Sleep(1 * time.Second)
 			fmt.Printf("===========get data from channel->c: %d\n", data)
 		} else {
 			break
@@ -55,6 +59,7 @@ func GoroutineChannelDemo4_range() {
 	//	}
 	//}
 	for data := range c {
+		time.Sleep(1 * time.Second)
 		fmt.Printf("===========get data from channel->c: %d\n", data)
 	}
 

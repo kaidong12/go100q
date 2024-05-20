@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func fibonacii(c, quit chan int) {
 	x, y := 1, 1
@@ -26,6 +29,7 @@ func main() {
 	go func() {
 		for i := 0; i < 10; i++ {
 			fmt.Println(<-c)
+			time.Sleep(1 * time.Second)
 		}
 
 		quit <- 0
@@ -33,4 +37,6 @@ func main() {
 
 	//main go
 	fibonacii(c, quit)
+
+	fmt.Println("end")
 }

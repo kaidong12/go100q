@@ -13,7 +13,7 @@ type Product struct {
 }
 
 func Sqlite_demo_1() {
-	db, err := gorm.Open(sqlite.Open("./testdata/test.db"), &gorm.Config{})
+	db, err := gorm.Open(sqlite.Open("./testdata/test_1.db"), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
 	}

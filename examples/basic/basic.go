@@ -18,8 +18,19 @@ func Variable() {
 	fmt.Println(s)
 
 	c := "291100.49 1131998.84"
-	uptime, _ := strconv.Atoi(strings.Split(strings.Split(c, " ")[0], ".")[0])
-	fmt.Println(uptime)
+	//uptime, _ := strconv.Atoi(strings.Split(strings.Split(c, " ")[0], ".")[0])
+	//fmt.Println(uptime)
+	uptime, _ := strconv.ParseFloat(strings.Split(c, " ")[0], 32)
+	fmt.Println()
+	fmt.Printf("Number: %d\n", int(math.Floor(uptime*1000)))
+
+	var a1 uint64 = 1202
+	var a2 uint64 = 1201
+	var a3 = int(a2 - a1)
+	fmt.Printf("Number: %d\n", a3)
+	var a4 = int(a1 - a2)
+	fmt.Printf("Number: %d\n", a4)
+
 }
 
 func Bytes_demo() {

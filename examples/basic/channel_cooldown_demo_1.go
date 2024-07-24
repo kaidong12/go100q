@@ -8,14 +8,14 @@ import (
 type CooldownService struct {
 	cooldownDuration time.Duration
 	ticker           *time.Ticker
-	cooldownCh       chan struct{}
+	//cooldownCh       chan struct{}
 	isCooldownActive bool
 }
 
 func NewCooldownService(cooldownDuration time.Duration) *CooldownService {
 	return &CooldownService{
 		cooldownDuration: cooldownDuration,
-		cooldownCh:       make(chan struct{}),
+		//cooldownCh:       make(chan struct{}),
 	}
 }
 
@@ -38,20 +38,20 @@ func (cs *CooldownService) Start() {
 		ct = <-cs.ticker.C
 		cs.ticker.Stop()
 		cs.isCooldownActive = false
-		close(cs.cooldownCh) // 通知冷却期结束
+		//close(cs.cooldownCh) // 通知冷却期结束
 	}()
 }
 
-func (cs *CooldownService) WaitForCooldown() {
-	if !cs.isCooldownActive {
-		fmt.Println("Not in cooldown, no need to wait.")
-		return
-	}
-
-	fmt.Println("Waiting for cooldown to end...")
-	<-cs.cooldownCh // 阻塞直到冷却期结束
-	fmt.Println("Cooldown ended, you can start again.")
-}
+//func (cs *CooldownService) WaitForCooldown() {
+//	if !cs.isCooldownActive {
+//		fmt.Println("Not in cooldown, no need to wait.")
+//		return
+//	}
+//
+//	fmt.Println("Waiting for cooldown to end...")
+//	<-cs.cooldownCh // 阻塞直到冷却期结束
+//	fmt.Println("Cooldown ended, you can start again.")
+//}
 
 func Channel_cool_down_demo_1() {
 	cooldownService := NewCooldownService(10 * time.Second)
@@ -67,14 +67,14 @@ func Channel_cool_down_demo_1() {
 	//fmt.Println("do a lot of things here!!")
 	//time.Sleep(2 * time.Second)
 
-	// 调用 WaitForCooldown 来等待冷却期结束
-	cooldownService.WaitForCooldown()
+	//// 调用 WaitForCooldown 来等待冷却期结束
+	//cooldownService.WaitForCooldown()
 
 	// 冷却期结束后，我们可以再次尝试启动
 	cooldownService.Start()
-
-	// 假设程序继续运行，并在某个时候再次需要等待冷却期结束
-	cooldownService.WaitForCooldown()
+	//
+	//// 假设程序继续运行，并在某个时候再次需要等待冷却期结束
+	//cooldownService.WaitForCooldown()
 
 	// 注意：在实际应用中，你可能需要处理更多的边界情况和错误
 }

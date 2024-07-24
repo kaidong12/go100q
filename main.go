@@ -1,6 +1,6 @@
 package main
 
-import "go100q/examples/gorm_demo"
+import "go100q/examples/etree"
 
 func main() {
 
@@ -39,6 +39,9 @@ func main() {
 	//basic.TypeDemo2_method_value_and_receiver()
 	//basic.TypeDemo2_method_expression_and_receiver()
 	//basic.TypeDemo2_method_selector_and_method_receiver()
+
+	//===============================
+	//net.Net_demo_To4()
 
 	//===============================
 	//basic.ReflectPair_pass_1()
@@ -94,6 +97,13 @@ func main() {
 	//===============================
 	//===============================
 	//===============================
+	//etree.ParseXMLDemo1()
+	//etree.ParseXMLDemo2()
+	etree.ParseXMLDemo3()
+
+	//===============================
+	//===============================
+	//===============================
 	//gin_demo.PingPong()
 	//gin_demo.RESTfulDemo()
 	//gin_demo.LoadStaticPage()
@@ -114,7 +124,7 @@ func main() {
 	//===============================
 	//===============================
 	//===============================
-	gorm_demo.Sqlite_demo_1()
+	//gorm_demo.Sqlite_demo_1()
 	//gorm_demo.Sqlite_demo_2()
 	//gorm_demo.Sqlite_demo_3()
 }

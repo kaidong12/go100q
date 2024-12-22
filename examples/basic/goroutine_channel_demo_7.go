@@ -34,7 +34,7 @@ func GoroutineChannelDemo7_WithTimeout_ctx_done() {
 	//fmt.Println("===========main go程结束")
 }
 
-func GoroutineChannelDemo8_WithTimeout_call_cancel() {
+func GoroutineChannelDemo7_WithTimeout_call_cancel() {
 	readCtx, readCancel := context.WithTimeout(context.Background(), time.Duration(100)*time.Second)
 	defer func() {
 		if readCancel != nil {

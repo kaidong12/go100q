@@ -5,6 +5,8 @@ import (
 	"math"
 	"strconv"
 	"strings"
+	"time"
+	"unicode/utf8"
 )
 
 func Variable() {
@@ -31,6 +33,13 @@ func Variable() {
 	var a4 = int(a1 - a2)
 	fmt.Printf("Number: %d\n", a4)
 
+	future := time.Unix(math.MaxInt32, 0)
+	fmt.Println(future)
+
+	future = time.Unix(math.MaxInt32, 100000000)
+	fmt.Println(future)
+
+	fmt.Println(utf8.DecodeRuneInString("@"))
 }
 
 func Bytes_demo() {
@@ -93,6 +102,139 @@ func Slice_and_range_demo() {
 
 	numbers3 := nums[2:]
 	fmt.Printf("len=%d cap=%d slice=%v\n", len(numbers3), cap(numbers3), numbers3)
+
+}
+
+func reverse(s []int) {
+	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
+		s[i], s[j] = s[j], s[i]
+	}
+}
+
+func Slice_reverse_demo() {
+	nums := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+	fmt.Println("Original slice:", nums)
+	reverse(nums)
+	fmt.Println("reverse(nums):", nums)
+	reverse(nums)
+	fmt.Println("reverse again:", nums)
+	reverse(nums[:3])
+	fmt.Println("reverse [:3]", nums)
+	reverse(nums[3:])
+	fmt.Println("reverse [3:]", nums)
+	reverse(nums)
+	fmt.Println("reverse(nums):", nums)
+	for _, i := range nums {
+		fmt.Println(i)
+	}
+
+}
+
+func slice_compare(a, b []int) bool {
+	if len(a) != len(b) {
+		return false
+	}
+
+	for x := range a {
+		if a[x] != b[x] {
+			return false
+		}
+	}
+
+	return true
+}
+
+func Slice_compare_demo() {
+	nums1 := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	nums2 := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11}
+	nums3 := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	c1 := slice_compare(nums1, nums2)
+	fmt.Println(c1)
+
+	c2 := slice_compare(nums1, nums3)
+	fmt.Println(c2)
+}
+
+func appendInt(x []int, y int) []int {
+	var z []int
+	zlen := len(x) + 1
+	if zlen <= cap(x) {
+		// There is room to grow.  Extend the slice.
+		z = x[:zlen]
+	} else {
+		// There is insufficient space.  Allocate a new array.
+		// Grow by doubling, for amortized linear complexity.
+		zcap := zlen
+		if zcap < 2*len(x) {
+			zcap = 2 * len(x)
+		}
+		z = make([]int, zlen, zcap)
+		copy(z, x) // a built-in function; see text
+	}
+	z[len(x)] = y
+	return z
+}
+
+func Slice_append_demo() {
+	var x, y []int
+	for i := 0; i < 10; i++ {
+		y = appendInt(x, i)
+		fmt.Printf("%d  cap=%d\t%v\n", i, cap(y), y)
+		x = y
+	}
+}
+
+func nonempty_1(strings []string) []string {
+	i := 0
+	for _, s := range strings {
+		if s != "" {
+			strings[i] = s
+			i++
+		}
+	}
+	return strings[:i]
+}
+
+func nonempty_2(strings []string) []string {
+	outs := strings[:0]
+	for _, s := range strings {
+		if s != "" {
+			outs = append(outs, s)
+		}
+	}
+	return outs
+}
+
+func Slice_nonempty_demo() {
+	data := []string{"one", "", "three"}
+	fmt.Printf("%q\n", nonempty_1(data)) // `["one" "three"]`
+	fmt.Printf("%q\n", data)             // `["one" "three" "three"]`
+
+	data2 := []string{"one", "", "three"}
+	fmt.Printf("%q\n", nonempty_2(data2)) // `["one" "three"]`
+	fmt.Printf("%q\n", data2)             // `["one" "three" "three"]`
+
+}
+
+func remove_1(strings []string, index int) []string {
+	copy(strings[index:], strings[index+1:])
+	return strings[:len(strings)-1]
+}
+
+func remove_2(strings []string, index int) []string {
+	strings[index] = strings[len(strings)-1]
+	return strings[:len(strings)-1]
+}
+
+func Slice_remove_demo() {
+	data := []string{"one", "", "three", "four", "five"}
+	fmt.Printf("new slice: %q\n", remove_1(data, 1))
+	fmt.Printf("Original slic: %q\n", data)
+
+	data2 := []string{"one", "", "three"}
+	fmt.Printf("new slice: %q\n", remove_2(data2, 1))
+	fmt.Printf("Original slic: %q\n", data2)
 
 }
 
@@ -244,14 +386,24 @@ func Pointer() {
 
 	a_pointer = &a
 
+	var a_pointer_pointer **int
+	a_pointer_pointer = &a_pointer
+
+	fmt.Printf("a的值(a): %d\n", a)
 	fmt.Printf("a的地址(&a): %x\n", &a)
-	fmt.Printf("a_pointer的值(a_pointer): %x\n", a_pointer)
+	fmt.Printf("指针变量的值就是它所指向数据的内存地址，普通变量的值就是我们具体存放的数据")
+	fmt.Printf("a的地址(即a_pointer的值): %x\n", a_pointer)
+	fmt.Printf("a_pointer的地址(&a_pointer): %x\n", &a_pointer)
+	fmt.Printf("指针变量的值就是它所指向数据的内存地址，普通变量的值就是我们具体存放的数据")
+	fmt.Printf("a_pointer的地址(即a_pointer_pointer的值): %x\n", a_pointer_pointer)
 	fmt.Printf("a_pointer指向的值(*a_pointer): %d\n", *a_pointer)
+
+	fmt.Printf("指针类型非常廉价，只占用 4 个或者 8 个字节的内存大小。")
+
 }
 
 func Swap(pa *int, pb *int) {
-	var temp int
-	temp = *pa
+	var temp = *pa
 	*pa = *pb
 	*pb = temp
 }

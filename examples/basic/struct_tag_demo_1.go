@@ -1,7 +1,9 @@
 package basic
 
 import (
+	"encoding/json"
 	"fmt"
+	"os"
 	"reflect"
 )
 
@@ -23,6 +25,16 @@ func findDoc(stru interface{}) map[string]string {
 
 func StructTagDemo_1() {
 	var stru resume
+	stru = resume{"StructTagDemo_1"}
 	doc := findDoc(&stru)
 	fmt.Printf("name字段为：%s\n", doc["name"])
+
+	bytes, err := json.Marshal(stru)
+	fmt.Println(bytes)
+	fmt.Println(string(bytes))
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
 }

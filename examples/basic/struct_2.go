@@ -27,6 +27,7 @@ func Struct_to_json() {
 		return
 	}
 
+	fmt.Println("JSON in bytes:", jsonData)
 	fmt.Println("JSON String:", string(jsonData))
 
 	// jsonstr -> 结构体

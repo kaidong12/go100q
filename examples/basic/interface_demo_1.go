@@ -4,7 +4,9 @@ import "fmt"
 
 func InterfaceDemo1_type_assertion() {
 	var t interface{}
-	//t = functionOfSomeType()
+	// An empty interface 'interface{}' stands for a set of all types.
+	// A variable of the empty interface type can store a value of any type.
+	t = functionOfSomeType()
 	switch t := t.(type) {
 	default:
 		fmt.Printf("unexpected type %T", t) // %T prints whatever type t has
@@ -17,6 +19,14 @@ func InterfaceDemo1_type_assertion() {
 	case *int:
 		fmt.Printf("pointer to integer %d\n", *t) // t has type *int
 	}
+}
+
+//func functionOfSomeType() Rectangle {
+//	return Rectangle{}
+//}
+
+func functionOfSomeType() bool {
+	return true
 }
 
 func InterfaceDemo1_type_assertion_with_ok(x interface{}) string {

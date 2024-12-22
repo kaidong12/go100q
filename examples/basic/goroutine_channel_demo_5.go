@@ -7,8 +7,8 @@ import (
 // chan<- //只写
 func counter(out chan<- int) {
 	defer close(out)
-	for i := 0; i < 5; i++ {
-		fmt.Printf("In counter （chan<- int）, send only, 发送>>%d>>到channel->c\n", i)
+	for i := 0; i < 10; i++ {
+		fmt.Printf("1, In counter （chan<- int）, send only, 发送>>%d>>到channel->c\n", i)
 		out <- i //如果对方不读 会阻塞
 	}
 }
@@ -16,7 +16,7 @@ func counter(out chan<- int) {
 // <-chan //只读
 func printer(in <-chan int) {
 	for num := range in {
-		fmt.Printf("In printer （<-chan int）, read only, 接收<<%d<<自channel->c\n", num)
+		fmt.Printf("2, In printer （<-chan int）, read only, 接收<<%d<<自channel->c\n", num)
 	}
 }
 

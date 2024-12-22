@@ -10,10 +10,12 @@ func fibonacci2(c chan int, quit chan int) {
 	for {
 		// 与switch语句相比，select有比较多的限制，
 		// 其中最大的一条限制就是每个case语句里必须是一个IO操作
+
+		fmt.Println("x", x)
 		select {
 		case c <- x:
 			x, y = y, x+y
-			fmt.Println(x, y)
+			fmt.Println("x, y", x, y)
 			//time.Sleep(1 * time.Second) //延时1s
 		case <-quit:
 			fmt.Println("quit")
@@ -42,20 +44,19 @@ func fibonacci2(c chan int, quit chan int) {
 */
 
 func GoroutineChannelDemo6_select_multiple_channel() {
-	//c := make(chan int, 5)
-	//c := make(chan int, 10)
-	//c := make(chan int, 100)
+	//c := make(chan int, 1)
 	c := make(chan int)
 	quit := make(chan int)
 
 	go func() {
 		//quit <- 0
 		for i := 0; i < 8; i++ {
-			fmt.Println(<-c)
+			fmt.Printf("In goroutine, read from c, %d -> %d\n", i, <-c)
 		}
 		time.Sleep(1 * time.Second) //延时1s
 		quit <- 0
 	}()
 
 	fibonacci2(c, quit)
+
 }

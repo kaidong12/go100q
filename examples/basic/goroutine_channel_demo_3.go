@@ -20,18 +20,21 @@ func GoroutineChannelDemo3_buffered_int() {
 		defer fmt.Println("子go程结束")
 
 		for i := 0; i < 5; i++ {
-			fmt.Printf("In sub goroutine, 发送到--%d--到channel->c\n", i)
+			fmt.Printf("1, In sub goroutine, 发送--%d--到channel->c\n", i)
 			c <- i
-			fmt.Printf("子go程正在运行[%d]: len(c)=%d, cap(c)=%d\n", i, len(c), cap(c))
+			fmt.Printf("4, 子go程正在运行[%d]: len(c)=%d, cap(c)=%d\n", i, len(c), cap(c))
 		}
 	}()
 
 	time.Sleep(2 * time.Second) //延时2s
 	for i := 0; i < 5; i++ {
+		fmt.Println("2, In main goroutine, 接收channel->c的数据，并赋值给num")
 		num := <-c //从c中接收数据，并赋值给num
-		fmt.Println("In main goroutine, 接收channel->c的数据，并赋值给num")
-		fmt.Println("===========num = ", num)
+		fmt.Println("3, ===========num = ", num, "\n")
+		time.Sleep(1 * time.Second)
 	}
+
+	time.Sleep(1 * time.Second)
 	fmt.Println("main进程结束")
 }
 
